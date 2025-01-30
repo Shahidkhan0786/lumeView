@@ -58,7 +58,7 @@ export default function About() {
         </p>
         <motion.button
           whileHover={{ scale: 1.1 }}
-          className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition"
+          className="bg-accent hover:bg-highlight text-white px-6 py-3 rounded-lg font-semibold transition"
         >
           Learn More
         </motion.button>

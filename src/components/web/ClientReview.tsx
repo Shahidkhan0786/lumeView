@@ -36,7 +36,7 @@ export default function ClientReview() {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-900 text-white text-center">
+    <section className="py-20 bg-primary-light text-white text-center relative clip-section">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-8">
           What Our Clients Say
@@ -51,8 +51,9 @@ export default function ClientReview() {
               transition={{ duration: 0.5 }}
               className="w-full"
             >
-              <Card className="bg-gray-800 p-6 rounded-xl shadow-lg">
-                <CardContent>
+              <Card className="bg-gray-800 p-6 rounded-xl shadow-lg relative overflow-hidden">
+                <div className="absolute inset-0 bg-gray-700 opacity-30 clip-design" />
+                <CardContent className="relative z-10">
                   <img
                     src={reviews[currentIndex].avatar}
                     alt={reviews[currentIndex].name}
@@ -70,6 +71,14 @@ export default function ClientReview() {
           </AnimatePresence>
         </div>
       </div>
+      <style jsx>{`
+        .clip-design {
+          clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+        }
+        .clip-section {
+          clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+        }
+      `}</style>
     </section>
   );
 }
