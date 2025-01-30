@@ -19,7 +19,7 @@ jobs:
           node-version: "22.13.1"
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --force
 
       - name: Build Next.js App
         run: npm run build
