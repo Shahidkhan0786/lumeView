@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex space-x-4">
           <a href="tel:+123456789" className="flex items-center space-x-1">
             <Phone size={16} />
-            <span>+123 456 789</span>
+            <span>+86 172 6943 0601</span>
           </a>
         </div>
         <div className="flex space-x-4">
@@ -87,7 +87,7 @@ export default function Navbar() {
                       setIsMobileSubSubmenuOpen(!isMobileSubSubmenuOpen)
                     }
                   >
-                    <span>XBoard V7 Series</span>
+                    <span>Intelligent Panel</span>
                     <ChevronRight size={16} />
                   </button>
                   {isMobileSubSubmenuOpen && (
@@ -96,13 +96,19 @@ export default function Navbar() {
                         href="/products/xboard-v7/variant1"
                         className="hover:text-accent"
                       >
-                        Variant 1
+                        all in one
                       </Link>
                       <Link
                         href="/products/xboard-v7/variant2"
                         className="hover:text-accent"
                       >
-                        Variant 2
+                        all in one SE
+                      </Link>
+                      <Link
+                        href="/products/xboard-v7/variant2"
+                        className="hover:text-accent"
+                      >
+                        LED all in one
                       </Link>
                     </div>
                   )}
@@ -160,7 +166,7 @@ export default function Navbar() {
                     onMouseLeave={() => setOpenSubmenu(null)}
                   >
                     <div className="flex justify-between items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <span>XBoard V7 Series</span>
+                      <span>Intelligent Panel</span>
                       <ChevronRight size={16} />
                     </div>
                     {openSubmenu === "xboard" && (
@@ -169,34 +175,98 @@ export default function Navbar() {
                           href="/products/xboard-v7/variant1"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
-                          Variant 1
+                          all in one
                         </Link>
                         <Link
                           href="/products/xboard-v7/variant2"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
-                          Variant 2
+                          all in one SE
+                        </Link>
+                        <Link
+                          href="/products/xboard-v7/variant2"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          LED all in one
                         </Link>
                       </div>
                     )}
                   </div>
-                  <Link
-                    href="/products/v6-classic"
-                    className="block px-4 py-2 hover:bg-gray-100"
+
+                  <div
+                    className="relative group"
+                    onMouseEnter={() => setOpenSubmenu("digital-signage")}
+                    onMouseLeave={() => setOpenSubmenu(null)}
                   >
-                    V6 Classic Series
-                  </Link>
+                    <div className="flex justify-between items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <span> Digital Signage</span>
+                      <ChevronRight size={16} />
+                    </div>
+                    {openSubmenu === "digital-signage" && (
+                      <div className="absolute left-full top-0 w-56 bg-white text-black shadow-lg border rounded-md py-2">
+                        <Link
+                          href="/products/xboard-v7/variant1"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Advertising Machine
+                        </Link>
+                        <Link
+                          href="/products/xboard-v7/variant2"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Vertical advertising machine
+                        </Link>
+                        <Link
+                          href="/products/xboard-v7/variant2"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Dual side advertising
+                        </Link>
+                        <Link
+                          href="/products/xboard-v7/variant2"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Digital board
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
                   <Link
                     href="/products/v6-viewpro"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    V6 ViewPro Series
+                    Digital Frame
                   </Link>
                   <Link
                     href="/products/smart-blackboard"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    Smart Blackboard
+                    TV
+                  </Link>
+                  <Link
+                    href="/products/smart-blackboard"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    LED Display
+                  </Link>
+                  <Link
+                    href="/products/smart-blackboard"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Touch Enquiry
+                  </Link>
+                  <Link
+                    href="/products/smart-blackboard"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Mobile Screen
+                  </Link>
+                  <Link
+                    href="/products/smart-blackboard"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Accessories
                   </Link>
                 </div>
               )}
@@ -219,7 +289,7 @@ export default function Navbar() {
           {/* Contact Sales Button */}
           <Button
             variant="default"
-            className="hidden md:block bg-secondary text-white hover:bg-highlight"
+            className="hidden md:block bg-accent text-white hover:bg-highlight"
           >
             Contact Sales
           </Button>

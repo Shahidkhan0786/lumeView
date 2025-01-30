@@ -11,26 +11,32 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-10">
-      <div className="container mx-auto px-6 lg:px-20 text-center md:text-left">
+    <footer
+      className="relative  bg-gradient-to-b from-black via-gray-950 to-black text-white py-10 mt-16"
+      style={{ backgroundImage: "url('/footer.png')" }}
+    >
+      {/* Overlay for better readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-90"></div>
+
+      <div className="relative container mx-auto px-6 lg:px-20 text-center md:text-left">
         <h2 className="text-2xl font-bold mb-6 text-center">
           GET CONNECTED WITH US
         </h2>
 
         <div className="flex justify-center space-x-6 mb-6">
-          <Link href="#" className="text-gray-400 hover:text-white">
+          <Link href="#" className="text-gray-300 hover:text-accent">
             <FaLinkedin size={28} />
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-white">
+          <Link href="#" className="text-gray-300 hover:text-accent">
             <FaFacebook size={28} />
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-white">
+          <Link href="#" className="text-gray-300 hover:text-accent">
             <FaTwitter size={28} />
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-white">
+          <Link href="#" className="text-gray-300 hover:text-accent">
             <FaYoutube size={28} />
           </Link>
-          <Link href="#" className="text-gray-400 hover:text-white">
+          <Link href="#" className="text-gray-300 hover:text-accent">
             <FaEnvelope size={28} />
           </Link>
         </div>
@@ -38,19 +44,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
-            <ul className="text-gray-400 space-y-3">
+            <ul className="text-gray-300 space-y-3">
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="#" className="hover:text-accent">
                   About Lumeview
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="#" className="hover:text-accent">
                   Awards
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="#" className="hover:text-accent">
                   Contact Us
                 </Link>
               </li>
@@ -59,9 +65,9 @@ export default function Footer() {
 
           <div>
             <h3 className="text-lg font-semibold mb-4">News & Events</h3>
-            <ul className="text-gray-400 space-y-3">
+            <ul className="text-gray-300 space-y-3">
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="#" className="hover:text-accent">
                   Blogs
                 </Link>
               </li>
@@ -70,9 +76,9 @@ export default function Footer() {
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Customer Stories</h3>
-            <ul className="text-gray-400 space-y-3">
+            <ul className="text-gray-300 space-y-3">
               <li>
-                <Link href="#" className="hover:text-white">
+                <Link href="#" className="hover:text-accent">
                   Customer Stories
                 </Link>
               </li>
@@ -81,7 +87,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col lg:flex-row justify-between items-start lg:items-center">
-          <p className="text-gray-400 text-center lg:text-left max-w-lg">
+          <p className="text-gray-300 text-center lg:text-left max-w-lg">
             Sign up to receive Lumeview marketing emails. You can modify your
             subscription or unsubscribe at any time.
           </p>
@@ -90,16 +96,16 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your E-mail Address"
-                className="bg-gray-800 text-white px-4 py-3 rounded-l-md w-full focus:outline-none"
+                className="bg-gray-700 text-white px-4 py-3 rounded-l-md w-full focus:outline-none"
               />
-              <button className="bg-white text-black px-6 py-3 rounded-r-md font-semibold">
+              <button className="bg-accent hover:bg-highlight text-black px-6 py-3 rounded-r-md font-semibold">
                 SUBMIT
               </button>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 text-gray-400 text-center lg:text-left">
+        <div className="mt-8 text-gray-300 text-center lg:text-left">
           <p>21076 Bake Parkway, Suite 106, Lake Forest, CA 92630</p>
           <p className="mt-2">
             <Link href="#" className="hover:text-white">
