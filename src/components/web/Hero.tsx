@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
   {
-    title: "A Transform Your Business ",
+    title: "Transform Your Business ",
     subtitle:
       "with Cutting-Edge Interactive Displays.Enhance your business environment with our versatile display solutions",
     image: "/images/lumeview_hero_1.jpg", // Update with actual image path
