@@ -10,13 +10,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        white: "#FFFFFF",
-        brightBlue: "#2437FF",
-        red: "#FF3E30",
-        yellowGold: "#FFBB06",
-        deepBlue: "#1E32FF",
+        primary: "#1A33FF", // Dominant blue
+
+        secondary: "#FF3B30", // Strong red
+
+        accent: "#FFB800", // Bright yellow
+
+        highlight: "#00B388", // Teal green
+
+        deep: "#7F00FF", // Vibrant purple
       },
       borderRadius: {
         lg: "var(--radius)",
