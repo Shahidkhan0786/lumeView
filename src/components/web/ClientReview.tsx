@@ -39,7 +39,7 @@ export default function ClientReview() {
     <section className="py-20 bg-primary-light text-white text-center relative clip-section">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-8">
-          What Our Clients Say
+          WHAT OUR CLIENTS SAY
         </h2>
         <div className="relative w-full max-w-2xl mx-auto overflow-hidden">
           <AnimatePresence mode="wait">

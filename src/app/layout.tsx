@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LumeView Manufacture",
+  title: "Lumeview-Manufacture",
   description: "A electronic company",
 };
 
