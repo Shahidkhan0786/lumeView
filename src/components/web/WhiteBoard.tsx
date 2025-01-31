@@ -24,7 +24,6 @@ export default function WhiteBoardSection() {
         title="HDMI, USB, and wireless connections"
         text="Seamless integration with other devices for enhanced productivity and collaboration."
         imageSrc="/images/hdmi-usb.png"
-        // bgColor="bg-accent-light"
         reverse={false}
       />
     </div>
@@ -37,17 +36,29 @@ function Section({ title, text, imageSrc, bgColor, reverse }) {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true }}
+      viewport={{ once: false, amount: 0.3 }} // Animation triggers when 30% of the section is visible
       className={`w-full flex flex-col md:flex-row items-center justify-center p-6 md:p-8 min-h-[50vh] ${bgColor} ${
         reverse ? "md:flex-row-reverse" : ""
       } relative overflow-hidden`}
-      //   style={{ clipPath: "polygon(0 0, 75% 0, 100% 50%, 75% 100%, 0 100%)" }}
     >
-      <div className="md:w-1/2 p-4 relative z-10">
+      <motion.div
+        initial={{ opacity: 0, x: reverse ? 100 : -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="md:w-1/2 p-4 relative z-10"
+      >
         <h2 className="text-2xl font-bold mb-4">{title}</h2>
         <p className="text-lg">{text}</p>
-      </div>
-      <div className="md:w-1/2 p-4 relative z-10">
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="md:w-1/2 p-4 relative z-10"
+      >
         <Image
           src={imageSrc}
           alt={title}
@@ -55,11 +66,9 @@ function Section({ title, text, imageSrc, bgColor, reverse }) {
           height={250}
           className="rounded-lg"
         />
-      </div>
-      <div
-        className="absolute inset-0 bg-white z-0"
-        // style={{ clipPath: "polygon(0 0, 75% 0, 100% 50%, 75% 100%, 0 100%)" }}
-      ></div>
+      </motion.div>
+
+      <div className="absolute inset-0 bg-white z-0"></div>
     </motion.div>
   );
 }
