@@ -57,7 +57,6 @@ export default function OurProducts() {
         >
           Discover our latest range of interactive flat panels and digital
           displays designed for seamless collaboration and innovation.
-        </p>
         </motion.p>
 
         {/* Animated Product Cards */}

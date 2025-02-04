@@ -175,19 +175,19 @@ export default function Navbar() {
                           href="/products/xboard-v7/variant1"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
-                          all in one
+                          All In One
                         </Link>
                         <Link
                           href="/products/xboard-v7/variant2"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
-                          all in one SE
+                          All In One SE
                         </Link>
                         <Link
                           href="/products/xboard-v7/variant2"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
-                          LED all in one
+                          LED All In One
                         </Link>
                       </div>
                     )}
