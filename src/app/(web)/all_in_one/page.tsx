@@ -154,10 +154,10 @@ export default function HeroSection() {
 
         {/* Text Content Overlay */}
         <div className="relative z-10 max-w-lg text-white">
-          <h4 className="text-gray-300 font-semibold text-lg">
+          <h4 className="text-gray font-extrabold text-lg">
             Indoor Digital Signage
           </h4>
-          <p className="text-gray-400 text-sm mb-2">
+          <p className="text-gray font-bold text-sm mb-2">
             Touch Inquiry Interactive All-in-One Machine
           </p>
           <h1 className="text-4xl font-bold leading-tight">
