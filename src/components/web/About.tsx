@@ -65,7 +65,7 @@ export default function About() {
       </motion.div>
 
       <motion.div
-        style={{ y }}
+        // style={{ y }}
         className="absolute inset-0 w-full h-full bg-black bg-opacity-80 bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/maps.png')" }}
       >

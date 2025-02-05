@@ -23,11 +23,24 @@ export default function Navbar() {
   const [isMobileSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
   const [isMobileSubSubmenuOpen, setIsMobileSubSubmenuOpen] = useState(false);
   const dropdownRef = useRef(null);
+  // Add timeout ref to prevent submenu from closing instantly
+  const submenuTimeout = useRef(null);
+
+  const handleMouseEnter = () => {
+    clearTimeout(submenuTimeout.current); // Clear previous timeout to avoid unnecessary close
+    setIsProductsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    submenuTimeout.current = setTimeout(() => {
+      setIsProductsOpen(false);
+    }, 300); // Add slight delay to prevent instant closing
+  };
 
   return (
     <>
       {/* Top Bar */}
-      <div className="w-full  bg-primary text-white py-2 text-sm flex justify-between items-center px-6 md:px-12 fixed top-0 left-0 right-0 z-50">
+      <div className="w-full  bg-primary text-white py-2 text-sm flex justify-between items-center px-6 md:px-12 fixed top-0 left-0 right-0 z-40">
         <div className="flex space-x-4">
           <a href="tel:+123456789" className="flex items-center space-x-1">
             <Phone size={16} />
@@ -48,7 +61,7 @@ export default function Navbar() {
       </div>
 
       {/* Navbar */}
-      <nav className="w-full bg-white text-black fixed top-[32px] left-0 right-0 z-50 shadow-md">
+      <nav className="w-full bg-white text-black fixed top-[32px] left-0 right-0 z-40 shadow-md">
         <div className="container mx-auto flex justify-between items-center py-3 px-6">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
@@ -151,8 +164,8 @@ export default function Navbar() {
           <div className="hidden md:flex space-x-6 items-center mx-auto">
             <div
               className="relative"
-              onMouseEnter={() => setIsProductsOpen(true)}
-              onMouseLeave={() => setIsProductsOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="flex items-center space-x-1 hover:text-accent">
                 <span>Products</span>
@@ -175,19 +188,19 @@ export default function Navbar() {
                           href="/products/xboard-v7/variant1"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
-                          all in one
+                          All In One
                         </Link>
                         <Link
                           href="/products/xboard-v7/variant2"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
-                          all in one SE
+                          All In One SE
                         </Link>
                         <Link
                           href="/products/xboard-v7/variant2"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
-                          LED all in one
+                          LED All In One
                         </Link>
                       </div>
                     )}
@@ -205,7 +218,7 @@ export default function Navbar() {
                     {openSubmenu === "digital-signage" && (
                       <div className="absolute left-full top-0 w-56 bg-white text-black shadow-lg border rounded-md py-2">
                         <Link
-                          href="/products/xboard-v7/variant1"
+                          href="/digital_signage"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
                           Advertising Machine
