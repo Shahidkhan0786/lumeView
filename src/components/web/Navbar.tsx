@@ -105,16 +105,10 @@ export default function Navbar() {
                   </button>
                   {isMobileSubSubmenuOpen && (
                     <div className="w-full bg-gray-100 shadow-md flex flex-col items-center py-2">
-                      <Link
-                        href="/products/xboard-v7/variant1"
-                        className="hover:text-accent"
-                      >
-                        all in one
+                      <Link href="/all_in_one" className="hover:text-accent">
+                        All In One
                       </Link>
-                      <Link
-                        href="/products/xboard-v7/variant2"
-                        className="hover:text-accent"
-                      >
+                      <Link href="/all_in_one" className="hover:text-accent">
                         all in one SE
                       </Link>
                       <Link
@@ -185,13 +179,13 @@ export default function Navbar() {
                     {openSubmenu === "xboard" && (
                       <div className="absolute left-full top-0 w-56 bg-white text-black shadow-lg border rounded-md py-2">
                         <Link
-                          href="/products/xboard-v7/variant1"
+                          href="/all_in_one"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
                           All In One
                         </Link>
                         <Link
-                          href="/products/xboard-v7/variant2"
+                          href="/all_in_one"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
                           All In One SE
