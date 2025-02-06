@@ -40,7 +40,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <div className="w-full  bg-primary text-white py-2 text-sm flex justify-between items-center px-6 md:px-12 fixed top-0 left-0 right-0 z-40">
+      <div className="w-full  bg-primary text-white py-2 text-sm flex justify-between items-center px-6 md:px-12 fixed top-0 left-0 right-0 z-50">
         <div className="flex space-x-4">
           <a href="tel:+123456789" className="flex items-center space-x-1">
             <Phone size={16} />
@@ -61,7 +61,7 @@ export default function Navbar() {
       </div>
 
       {/* Navbar */}
-      <nav className="w-full bg-white text-black fixed top-[32px] left-0 right-0 z-40 shadow-md">
+      <nav className="w-full bg-white text-black fixed top-[32px] left-0 right-0 z-50 shadow-md">
         <div className="container mx-auto flex justify-between items-center py-3 px-6">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">

@@ -8,12 +8,11 @@ import Link from "next/link";
 
 export default function HeroSection() {
   const sections = ["Overview", "Features", "Specifications"];
+
   const [activeSection, setActiveSection] = useState("Overview");
   const [isSticky, setIsSticky] = useState(false);
   const navbarRef = useRef(null);
   const placeholderRef = useRef(null);
-  const debounceTimeout = useRef(null);
-  const lastStickyPosition = useRef(0); // Store the last position where it became sticky
   const models = [
     {
       name: "LM-LG325N",
@@ -92,55 +91,38 @@ export default function HeroSection() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (debounceTimeout.current) {
-        clearTimeout(debounceTimeout.current);
+      const scrollPosition = window.scrollY;
+      const navbar = navbarRef.current;
+      const placeholder = placeholderRef.current;
+
+      if (navbar && placeholder) {
+        const navbarOffset = placeholder.offsetTop;
+
+        if (scrollPosition >= navbarOffset - 20) {
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+        }
       }
 
-      debounceTimeout.current = setTimeout(() => {
-        const scrollPosition = window.scrollY;
-        const navbar = navbarRef.current;
-        const placeholder = placeholderRef.current;
+      const offsets = sections.map((id) => {
+        const element = document.getElementById(
+          id.toLowerCase().replace(/\s/g, "-")
+        );
+        return element ? element.offsetTop : 0;
+      });
 
-        if (navbar && placeholder) {
-          const navbarOffset = placeholder.offsetTop;
-
-          if (!isSticky && scrollPosition >= navbarOffset - 103) {
-            console.log("set sticky true");
-            setIsSticky(true);
-            lastStickyPosition.current = scrollPosition; // Store the position where it became sticky
-          } else if (
-            isSticky &&
-            scrollPosition < lastStickyPosition.current - 50
-          ) {
-            console.log("set sticky false");
-            setIsSticky(false);
-          }
+      for (let i = offsets.length - 1; i >= 0; i--) {
+        if (scrollPosition >= offsets[i] - 80) {
+          setActiveSection(sections[i]);
+          break;
         }
-
-        const offsets = sections.map((id) => {
-          const element = document.getElementById(
-            id.toLowerCase().replace(/\s/g, "-")
-          );
-          return element ? element.offsetTop : 0;
-        });
-
-        for (let i = offsets.length - 1; i >= 0; i--) {
-          if (scrollPosition >= offsets[i] - 80) {
-            setActiveSection(sections[i]);
-            break;
-          }
-        }
-      }, 200); // 200ms debounce time
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (debounceTimeout.current) {
-        clearTimeout(debounceTimeout.current);
-      }
-    };
-  }, [isSticky]);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(
@@ -200,8 +182,8 @@ export default function HeroSection() {
         {/* Sticky Navbar */}
         <nav
           ref={navbarRef}
-          className={`w-full bg-white shadow-md z-40 transition-all duration-300 ${
-            isSticky ? "fixed top-24 left-0 w-full" : "relative"
+          className={`w-full bg-white shadow-md z-10 transition-all duration-300 ${
+            isSticky ? "fixed top-20 left-0 w-full" : "relative"
           }`}
         >
           <div className="max-w-7xl mx-auto flex justify-center space-x-6 p-4">
