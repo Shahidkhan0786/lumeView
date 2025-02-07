@@ -1,93 +1,53 @@
 "use client";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import ProductApplication from "@/components/web/IndoorDigitalSignage/ProductApplication";
+import CloudinaryVideo from "@/components/web/CloudinaryVideo";
+
 import Link from "next/link";
 
 export default function HeroSection() {
-  const sections = ["Overview", "Features", "Specifications"];
+  const sections = ["Overview", "Products"];
   const [activeSection, setActiveSection] = useState("Overview");
   const [isSticky, setIsSticky] = useState(false);
   const navbarRef = useRef(null);
   const placeholderRef = useRef(null);
   const debounceTimeout = useRef(null);
   const lastStickyPosition = useRef(0); // Store the last position where it became sticky
-  const models = [
+
+  const featuresData = [
     {
-      name: "LM-LG325N",
-      screenSize: '32"',
-      resolution: "1920 x 1080",
-      brightness: "350 cd/m²",
-      contrastRatio: "1200:1",
-      viewingAngle: "178°",
-      backlight: "LED",
-      touchTechnology: "IR Touch",
-      os: "Android 9.0",
-      ramRom: "2G + 32G",
-      speaker: "2 x 15W",
-      powerConsumption: "≤ 300W",
-      hdmiInput: "3",
-      usbPort: "3",
-      wifi: "Yes",
-      installationMode: "Wall-Mounting / Floor-Mounting",
+      title: "Ultra-high configuration, leaping to the top",
+      text: "Smart writing, ultra-clear camera, 4K ultra-clear display, 8-meter long-distance sound pickup. Android / Windows optional.",
+      image: "/images/all-in-one/ultra-high-configuration.png",
+      isFullWidth: true,
     },
     {
-      name: "LM-LG435N",
-      screenSize: '43"',
-      resolution: "1920 x 1080",
-      brightness: "350 cd/m²",
-      contrastRatio: "1200:1",
-      viewingAngle: "178°",
-      backlight: "LED",
-      touchTechnology: "IR Touch",
-      os: "Android 9.0",
-      ramRom: "2G + 32G",
-      speaker: "2 x 15W",
-      powerConsumption: "≤ 300W",
-      hdmiInput: "3",
-      usbPort: "3",
-      wifi: "Yes",
-      installationMode: "Wall-Mounting / Floor-Mounting",
+      title: "Simple and stylish",
+      text: "It integrates a large screen, electronic whiteboard, computer, microphone, and audio functions. Simple gray upper and lower borders, combining technology and beauty.",
+      image: "/images/all-in-one/simple.png",
+      isFullWidth: true,
     },
     {
-      name: "LM-LG505N",
-      screenSize: '50"',
-      resolution: "3840 x 2160",
-      brightness: "400 cd/m²",
-      contrastRatio: "1300:1",
-      viewingAngle: "178°",
-      backlight: "LED",
-      touchTechnology: "IR Touch",
-      os: "Android 9.0",
-      ramRom: "3G + 32G",
-      speaker: "2 x 15W",
-      powerConsumption: "≤ 350W",
-      hdmiInput: "3",
-      usbPort: "3",
-      wifi: "Yes",
-      installationMode: "Wall-Mounting / Floor-Mounting",
+      title: "Screen sharing, writing interaction",
+      text: "48-megapixel video conferencing: ultra-clear, compatible with multiple conference platforms.",
+      image: "/images/all-in-one/whiteboard-displaying-48-megapixel.png",
     },
     {
-      name: "LM-LG555N",
-      screenSize: '55"',
-      resolution: "3840 x 2160",
-      brightness: "400 cd/m²",
-      contrastRatio: "1300:1",
-      viewingAngle: "178°",
-      backlight: "LED",
-      touchTechnology: "IR Touch",
-      os: "Android 9.0",
-      ramRom: "3G + 32G",
-      speaker: "2 x 15W",
-      powerConsumption: "≤ 350W",
-      hdmiInput: "3",
-      usbPort: "3",
-      wifi: "Yes",
-      installationMode: "Wall-Mounting / Floor-Mounting",
+      title: "4K ultra-clear display",
+      text: "Vivid and stunning images. Glass hardness ≥7H. Anti-glare technology.",
+      image: "/images/all-in-one/cutting-edge-4K-ultra-clear-display.png",
     },
-    // Add remaining models similarly...
+    {
+      title: "8 meters long distance sound pickup",
+      text: "Say goodbye to unclear calls. 8-array microphone with intelligent noise reduction & echo cancellation.",
+      image: "/images/all-in-one/8-meters-long-distance-sound-pickup.png",
+    },
+    {
+      title: "Restore the pen and paper experience",
+      text: "Intelligent writing, equipped with infrared touch technology, ultra-low writing delay of 0.07 seconds, every stroke seems to fall on paper.",
+      image: "/images/all-in-one/digital-pen-writing.png",
+    },
   ];
 
   useEffect(() => {
@@ -182,7 +142,7 @@ export default function HeroSection() {
             Elevate Advertising with Smart Displays
           </h1>
           <Link
-            href="/files/DataSheet-Indoor Digital Signage-20250122.pdf"
+            href="/files/DataSheet-Interactive-Flat-Panel.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -223,8 +183,14 @@ export default function HeroSection() {
 
         {/* Sections */}
         <div className="mt-20 w-full">
-          <section id="overview" className="min-h-screen p-10 bg-white">
-            <h2 className="text-3xl font-bold">Overview</h2>
+          <section id="overview" className="min-h-80 p-10 bg-white">
+            {/* <h2 className="text-3xl font-bold">Overview</h2> */}
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+              <span className="relative inline-block p-2">
+                Overview
+                <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+              </span>
+            </h2>
             <p className="text-lg mt-4">
               Reassured IPS anti-explosive screen with A+ panel technology.
               Covering RGB wide color gamut for rich and vivid colors.
@@ -235,8 +201,14 @@ export default function HeroSection() {
             </p>
           </section>
 
-          <section id="features" className="min-h-screen  bg-gray-50 ">
-            <h2 className="text-3xl font-bold p-10">Key Features</h2>
+          <section id="products" className="min-h-screen p-10 bg-gray-50 ">
+            {/* <h2 className="text-3xl font-bold p-10">Products</h2> */}
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+              <span className="relative inline-block p-2">
+                Products
+                <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+              </span>
+            </h2>
             <ul className="list-disc mt-4 ml-6 p-10">
               <li>HD & Ultra-HD vision (2K/4K resolution)</li>
               <li>Remote management and unified control</li>
@@ -248,6 +220,62 @@ export default function HeroSection() {
               <li>Custom power on/off scheduling</li>
               <li>Horizontal & vertical screen switching</li>
             </ul>
+
+            {featuresData
+              .filter((feature) => feature.isFullWidth)
+              .map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center gap-6 transition-all duration-300 hover:shadow-xl"
+                >
+                  {/* Image Container */}
+                  <div className="w-full md:w-1/4 flex justify-center">
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      width={200}
+                      height={120}
+                      className="rounded-lg object-cover"
+                    />
+                  </div>
+
+                  {/* Text Content */}
+                  <div className="w-full md:w-3/4 text-center md:text-left">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">
+                      {feature.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+
+            {/* Grid Layout for Other Features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+              {featuresData
+                .filter((feature) => !feature.isFullWidth)
+                .map((feature, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center"
+                  >
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      width={150}
+                      height={100}
+                      className="rounded-lg"
+                    />
+                    <h3 className="text-xl font-semibold text-gray-800 mt-4">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 mt-2 text-center">
+                      {feature.text}
+                    </p>
+                  </div>
+                ))}
+            </div>
 
             {/* product appereance  */}
             <div className="flex flex-col items-center bg-white w-full pt-8">
@@ -261,14 +289,14 @@ export default function HeroSection() {
               <Section
                 title="Enhance meetings with interactive whiteboards"
                 text="Boost team creativity and productivity with seamless meetings and presentations."
-                imageSrc="/images/indoor-digital-signage.png"
+                imageSrc="/images/all-in-one/appearence1.png"
                 bgColor="bg-primary-light"
                 reverse={false}
               />
               <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/indoor-digital-signage1.png"
+                title="Comprehensive View of Interactive Display Panel"
+                text="Showcasing multiple perspectives, including front, back, top, and side views, highlighting key components like speakers, power input, and camera."
+                imageSrc="/images/all-in-one/appearence2.png"
                 bgColor="bg-secondary-light"
                 reverse={true}
               />
@@ -278,117 +306,113 @@ export default function HeroSection() {
             <div className="flex flex-col items-center bg-white pt-8">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
                 <span className="relative inline-block p-2">
-                  Management System
+                  Accessory
                   <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
                 </span>
               </h2>
 
               <Section
-                title="Enhance meetings with interactive whiteboards"
-                text="Boost team creativity and productivity with seamless meetings and presentations."
-                imageSrc="/images/managment-system1.png"
+                title="Wireless Screen Mirroring for Seamless Connectivity"
+                text="Easily mirror your laptop or mobile screen wirelessly for presentations, meetings, and collaboration without the hassle of cables."
+                imageSrc="/images/all-in-one/accessory1.png"
                 bgColor="bg-primary-light"
                 reverse={false}
               />
               <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/managment-system2.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/managment-system3.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/managment-system4.png"
+                title="One-Touch Screen Sharing for Smart Workspaces"
+                text="With a simple tap, share your screen instantly, making remote collaboration and conference room discussions more efficient and interactive."
+                imageSrc="/images/all-in-one/accessory2.png"
                 bgColor="bg-secondary-light"
                 reverse={true}
               />
             </div>
 
-            {/* Product Installation   */}
+            {/* Intelligence pen（  */}
             <div className="flex flex-col items-center bg-white pt-8">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
                 <span className="relative inline-block p-2">
-                  Product Installation
+                  Intelligence pen
+                  <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+                </span>
+              </h2>
+
+              <Section
+                title="Smart Wireless Presentation Pen with Laser Pointer"
+                text="This sleek and ergonomic presentation pen features intuitive controls for seamless slide navigation, a built-in laser pointer for highlighting key points, and a full-screen mode function to enhance professional presentations."
+                imageSrc="/images/all-in-one/Intelligence-pen1.png"
+                bgColor="bg-primary-light"
+                reverse={false}
+              />
+              <Section
+                title="Multifunctional Controls for Efficient Presentations"
+                text="Equipped with dedicated buttons for next/previous slide navigation, black screen mode, and a laser pointer function, this smart pen ensures smooth control, making it an essential tool for meetings, lectures, and conferences."
+                imageSrc="/images/all-in-one/Intelligence-pen2.png"
+                bgColor="bg-secondary-light"
+                reverse={true}
+              />
+            </div>
+
+            {/* Speakerphone（  */}
+            <div className="flex flex-col items-center bg-white pt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+                <span className="relative inline-block p-2">
+                  Speakerphone
+                  <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+                </span>
+              </h2>
+
+              <Section
+                title="360° Smart Conference Speaker with Premium Audio"
+                text="A modern and stylish conference speaker with a sleek fabric finish, intuitive touch controls, and built-in omnidirectional microphones for crystal-clear voice pickup. Designed for professional meetings and remote collaborations."
+                imageSrc="/images/all-in-one/Speakerphone.png"
+                bgColor="bg-primary-light"
+                reverse={false}
+              />
+              <Section
+                title="Intuitive Control Panel for Seamless Communication"
+                text="Featuring NFC, volume controls, microphone mute, call pickup/hangup, and Bluetooth connectivity, this smart speaker provides easy access to essential functions, ensuring a smooth and professional communication experience."
+                imageSrc="/images/all-in-one/Speakerphone2.png"
+                bgColor="bg-secondary-light"
+                reverse={true}
+              />
+              <Section
+                title="Versatile Connectivity for Conference & Collaboration"
+                text="Supports USB and Bluetooth connectivity, making it compatible with interactive flat panels, laptops, and mobile devices. Ideal for hybrid meetings, remote collaboration, and high-quality voice communication."
+                imageSrc="/images/all-in-one/Speakerphone3.png"
+                bgColor="bg-secondary-light"
+                reverse={true}
+              />
+            </div>
+
+            {/* Mobile stand   */}
+            <div className="flex flex-col items-center bg-white pt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+                <span className="relative inline-block p-2">
+                  Mobile stand
                   <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
                 </span>
               </h2>
               <Section
                 title="Enhance meetings with interactive whiteboards"
                 text="Boost team creativity and productivity with seamless meetings and presentations."
-                imageSrc="/images/product-installation.png"
+                imageSrc="/images/all-in-one/stand.png"
                 bgColor="bg-primary-light"
                 reverse={false}
               />
               <Section
                 title="Leveraging both LED and LCD technologies"
                 text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/product-installation2.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/product-installation3.png"
+                imageSrc="/images/all-in-one/stand1.png"
                 bgColor="bg-secondary-light"
                 reverse={true}
               />
             </div>
-
-            {/* Product Application  */}
-            <ProductApplication />
           </section>
 
-          <section id="specifications" className="min-h-screen p-10 bg-white">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
-              <span className="relative inline-block p-2">
-                Product Specifications
-                <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
-              </span>
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-gray-300 text-sm text-center">
-                <thead>
-                  <tr className="bg-gray-200">
-                    <th className="border border-gray-300 p-2">Feature</th>
-                    {models.map((model, index) => (
-                      <th key={index} className="border border-gray-300 p-2">
-                        {model.name}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.keys(models[0])
-                    .slice(1)
-                    .map((key, rowIndex) => (
-                      <tr key={rowIndex}>
-                        <td className="border border-gray-300 p-2 font-semibold">
-                          {key.replace(/([A-Z])/g, " $1").trim()}
-                        </td>
-                        {models.map((model, colIndex) => (
-                          <td
-                            key={colIndex}
-                            className="border border-gray-300 p-2"
-                          >
-                            {model[key]}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
+          <main className="flex flex-col items-center justify-center min-h-screen  text-white p-4">
+            {/* <h1 className="text-3xl font-bold mb-6">Welcome to Our Platform</h1> */}
+            <CloudinaryVideo />
+          </main>
         </div>
       </div>
     </>
