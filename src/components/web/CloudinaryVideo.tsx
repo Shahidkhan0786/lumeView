@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 
-export default function CloudinaryVideo() {
+export default function CloudinaryVideo({ src }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -43,8 +43,8 @@ export default function CloudinaryVideo() {
       <video
         ref={videoRef}
         className="w-full h-auto rounded-lg"
-        src="https://res.cloudinary.com/dmmkouxkh/video/upload/v1738936140/DETAILED_SCREE_mxufwn.mp4"
-        poster="https://res.cloudinary.com/dmmkouxkh/image/upload/v1738936140/DETAILED_SCREE_mxufwn.mp4"
+        src={src}
+        // poster="https://res.cloudinary.com/dmmkouxkh/image/upload/v1738936140/DETAILED_SCREE_mxufwn.mp4"
         onClick={togglePlay}
         controls
       />

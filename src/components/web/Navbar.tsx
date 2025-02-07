@@ -120,14 +120,14 @@ export default function Navbar() {
                         All In One
                       </Link>
                       <Link
-                        href="/all_in_one"
+                        href="/all_in_one_se"
                         className="hover:text-accent py-2"
                         onClick={closeMenu}
                       >
                         All In One SE
                       </Link>
                       <Link
-                        href="/products/xboard-v7/variant2"
+                        href="/led_all_in_one"
                         className="hover:text-accent py-2"
                         onClick={closeMenu}
                       >
@@ -218,13 +218,13 @@ export default function Navbar() {
                           All In One
                         </Link>
                         <Link
-                          href="/all_in_one"
+                          href="/all_in_one_se"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
                           All In One SE
                         </Link>
                         <Link
-                          href="/products/xboard-v7/variant2"
+                          href="/led_all_in_one"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
                           LED All In One

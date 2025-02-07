@@ -415,7 +415,7 @@ export default function HeroSection() {
 
           <main className="flex flex-col items-center justify-center  text-white p-4">
             {/* <h1 className="text-3xl font-bold mb-6">Welcome to Our Platform</h1> */}
-            <CloudinaryVideo src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1738936841/DETAILED_SCREE_hdsctg.mp4" />
+            <CloudinaryVideo src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1738942662/led_all_in_one_wfu2yu.mp4" />
           </main>
         </div>
       </div>
