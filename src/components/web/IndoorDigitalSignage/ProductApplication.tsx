@@ -45,8 +45,11 @@ export default function ProductApplication() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">
-          Product Applications
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+          <span className="relative inline-block p-2">
+            Product Applications
+            <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+          </span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {cases.map((caseItem, index) => (

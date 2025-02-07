@@ -14,6 +14,81 @@ export default function HeroSection() {
   const placeholderRef = useRef(null);
   const debounceTimeout = useRef(null);
   const lastStickyPosition = useRef(0); // Store the last position where it became sticky
+  const models = [
+    {
+      name: "LM-LG325N",
+      screenSize: '32"',
+      resolution: "1920 x 1080",
+      brightness: "350 cd/m²",
+      contrastRatio: "1200:1",
+      viewingAngle: "178°",
+      backlight: "LED",
+      touchTechnology: "IR Touch",
+      os: "Android 9.0",
+      ramRom: "2G + 32G",
+      speaker: "2 x 15W",
+      powerConsumption: "≤ 300W",
+      hdmiInput: "3",
+      usbPort: "3",
+      wifi: "Yes",
+      installationMode: "Wall-Mounting / Floor-Mounting",
+    },
+    {
+      name: "LM-LG435N",
+      screenSize: '43"',
+      resolution: "1920 x 1080",
+      brightness: "350 cd/m²",
+      contrastRatio: "1200:1",
+      viewingAngle: "178°",
+      backlight: "LED",
+      touchTechnology: "IR Touch",
+      os: "Android 9.0",
+      ramRom: "2G + 32G",
+      speaker: "2 x 15W",
+      powerConsumption: "≤ 300W",
+      hdmiInput: "3",
+      usbPort: "3",
+      wifi: "Yes",
+      installationMode: "Wall-Mounting / Floor-Mounting",
+    },
+    {
+      name: "LM-LG505N",
+      screenSize: '50"',
+      resolution: "3840 x 2160",
+      brightness: "400 cd/m²",
+      contrastRatio: "1300:1",
+      viewingAngle: "178°",
+      backlight: "LED",
+      touchTechnology: "IR Touch",
+      os: "Android 9.0",
+      ramRom: "3G + 32G",
+      speaker: "2 x 15W",
+      powerConsumption: "≤ 350W",
+      hdmiInput: "3",
+      usbPort: "3",
+      wifi: "Yes",
+      installationMode: "Wall-Mounting / Floor-Mounting",
+    },
+    {
+      name: "LM-LG555N",
+      screenSize: '55"',
+      resolution: "3840 x 2160",
+      brightness: "400 cd/m²",
+      contrastRatio: "1300:1",
+      viewingAngle: "178°",
+      backlight: "LED",
+      touchTechnology: "IR Touch",
+      os: "Android 9.0",
+      ramRom: "3G + 32G",
+      speaker: "2 x 15W",
+      powerConsumption: "≤ 350W",
+      hdmiInput: "3",
+      usbPort: "3",
+      wifi: "Yes",
+      installationMode: "Wall-Mounting / Floor-Mounting",
+    },
+    // Add remaining models similarly...
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,6 +158,7 @@ export default function HeroSection() {
   return (
     <>
       <section className="relative w-full h-80 mt-24 flex items-center justify-start px-6 md:px-12 lg:px-20 xl:px-32 bg-black">
+        {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/digital_signage/indoor-digital-signage.png"
@@ -94,11 +170,12 @@ export default function HeroSection() {
           <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
         </div>
 
+        {/* Text Content Overlay */}
         <div className="relative z-10 max-w-lg text-white">
-          <h4 className="text-gray font-extrabold text-lg">
+          <h4 className="text-white font-semibold text-lg">
             Indoor Digital Signage
           </h4>
-          <p className="text-gray font-bold text-sm mb-2">
+          <p className="text-white text-sm mb-2 font-semibold">
             Touch Inquiry Interactive All-in-One Machine
           </p>
           <h1 className="text-4xl font-bold leading-tight">
@@ -117,11 +194,13 @@ export default function HeroSection() {
       </section>
 
       <div className="min-h-screen bg-white">
+        {/* Placeholder to keep layout stable */}
         <div ref={placeholderRef}></div>
 
+        {/* Sticky Navbar */}
         <nav
           ref={navbarRef}
-          className={`w-full bg-white shadow-md z-50 transition-all duration-300 ${
+          className={`w-full bg-white shadow-md z-40 transition-all duration-300 ${
             isSticky ? "fixed top-24 left-0 w-full" : "relative"
           }`}
         >
@@ -142,7 +221,8 @@ export default function HeroSection() {
           </div>
         </nav>
 
-        <div className="mt-20">
+        {/* Sections */}
+        <div className="mt-20 w-full">
           <section id="overview" className="min-h-screen p-10 bg-white">
             <h2 className="text-3xl font-bold">Overview</h2>
             <p className="text-lg mt-4">
@@ -155,9 +235,9 @@ export default function HeroSection() {
             </p>
           </section>
 
-          <section id="features" className="min-h-screen p-20 bg-gray-50 ">
-            <h2 className="text-3xl font-bold">Key Features</h2>
-            <ul className="list-disc mt-4 ml-6">
+          <section id="features" className="min-h-screen  bg-gray-50 ">
+            <h2 className="text-3xl font-bold p-10">Key Features</h2>
+            <ul className="list-disc mt-4 ml-6 p-10">
               <li>HD & Ultra-HD vision (2K/4K resolution)</li>
               <li>Remote management and unified control</li>
               <li>Thick tempered glass</li>
@@ -169,45 +249,142 @@ export default function HeroSection() {
               <li>Horizontal & vertical screen switching</li>
             </ul>
 
+            {/* product appereance  */}
+            <div className="flex flex-col items-center bg-white w-full pt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+                <span className="relative inline-block p-2">
+                  Product Appearance
+                  <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+                </span>
+              </h2>
+
+              <Section
+                title="Enhance meetings with interactive whiteboards"
+                text="Boost team creativity and productivity with seamless meetings and presentations."
+                imageSrc="/images/indoor-digital-signage.png"
+                bgColor="bg-primary-light"
+                reverse={false}
+              />
+              <Section
+                title="Leveraging both LED and LCD technologies"
+                text="Supports conference rooms, production studios, and companies with different presentation environments."
+                imageSrc="/images/indoor-digital-signage1.png"
+                bgColor="bg-secondary-light"
+                reverse={true}
+              />
+            </div>
+
+            {/* product Management system  */}
+            <div className="flex flex-col items-center bg-white pt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+                <span className="relative inline-block p-2">
+                  Management System
+                  <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+                </span>
+              </h2>
+
+              <Section
+                title="Enhance meetings with interactive whiteboards"
+                text="Boost team creativity and productivity with seamless meetings and presentations."
+                imageSrc="/images/managment-system1.png"
+                bgColor="bg-primary-light"
+                reverse={false}
+              />
+              <Section
+                title="Leveraging both LED and LCD technologies"
+                text="Supports conference rooms, production studios, and companies with different presentation environments."
+                imageSrc="/images/managment-system2.png"
+                bgColor="bg-secondary-light"
+                reverse={true}
+              />
+              <Section
+                title="Leveraging both LED and LCD technologies"
+                text="Supports conference rooms, production studios, and companies with different presentation environments."
+                imageSrc="/images/managment-system3.png"
+                bgColor="bg-secondary-light"
+                reverse={true}
+              />
+              <Section
+                title="Leveraging both LED and LCD technologies"
+                text="Supports conference rooms, production studios, and companies with different presentation environments."
+                imageSrc="/images/managment-system4.png"
+                bgColor="bg-secondary-light"
+                reverse={true}
+              />
+            </div>
+
+            {/* Product Installation   */}
+            <div className="flex flex-col items-center bg-white pt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+                <span className="relative inline-block p-2">
+                  Product Installation
+                  <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+                </span>
+              </h2>
+              <Section
+                title="Enhance meetings with interactive whiteboards"
+                text="Boost team creativity and productivity with seamless meetings and presentations."
+                imageSrc="/images/product-installation.png"
+                bgColor="bg-primary-light"
+                reverse={false}
+              />
+              <Section
+                title="Leveraging both LED and LCD technologies"
+                text="Supports conference rooms, production studios, and companies with different presentation environments."
+                imageSrc="/images/product-installation2.png"
+                bgColor="bg-secondary-light"
+                reverse={true}
+              />
+              <Section
+                title="Leveraging both LED and LCD technologies"
+                text="Supports conference rooms, production studios, and companies with different presentation environments."
+                imageSrc="/images/product-installation3.png"
+                bgColor="bg-secondary-light"
+                reverse={true}
+              />
+            </div>
+
+            {/* Product Application  */}
             <ProductApplication />
           </section>
 
           <section id="specifications" className="min-h-screen p-10 bg-white">
-            <h2 className="text-3xl font-bold text-center mb-6">
-              Product Specifications
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+              <span className="relative inline-block p-2">
+                Product Specifications
+                <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+              </span>
             </h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse border border-gray-300 text-sm text-center">
                 <thead>
                   <tr className="bg-gray-200">
                     <th className="border border-gray-300 p-2">Feature</th>
-                    {["Model 1", "Model 2", "Model 3"].map((model, index) => (
+                    {models.map((model, index) => (
                       <th key={index} className="border border-gray-300 p-2">
-                        {model}
+                        {model.name}
                       </th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {["Resolution", "Brightness", "Contrast Ratio"].map(
-                    (feature, rowIndex) => (
+                  {Object.keys(models[0])
+                    .slice(1)
+                    .map((key, rowIndex) => (
                       <tr key={rowIndex}>
                         <td className="border border-gray-300 p-2 font-semibold">
-                          {feature}
+                          {key.replace(/([A-Z])/g, " $1").trim()}
                         </td>
-                        {["1920x1080", "350 cd/m²", "1200:1"].map(
-                          (value, colIndex) => (
-                            <td
-                              key={colIndex}
-                              className="border border-gray-300 p-2"
-                            >
-                              {value}
-                            </td>
-                          )
-                        )}
+                        {models.map((model, colIndex) => (
+                          <td
+                            key={colIndex}
+                            className="border border-gray-300 p-2"
+                          >
+                            {model[key]}
+                          </td>
+                        ))}
                       </tr>
-                    )
-                  )}
+                    ))}
                 </tbody>
               </table>
             </div>
@@ -215,5 +392,48 @@ export default function HeroSection() {
         </div>
       </div>
     </>
+  );
+}
+
+function Section({ title, text, imageSrc, bgColor, reverse }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.3 }} // Animation triggers when 30% of the section is visible
+      className={`w-full flex flex-col md:flex-row items-center justify-center p-6 md:p-8 min-h-[50vh] ${bgColor} ${
+        reverse ? "md:flex-row-reverse" : ""
+      } relative overflow-hidden`}
+    >
+      <motion.div
+        initial={{ opacity: 0, x: reverse ? 100 : -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="md:w-1/2 p-4 relative z-10"
+      >
+        <h2 className="text-2xl font-bold mb-4">{title}</h2>
+        <p className="text-lg">{text}</p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="md:w-1/2 p-4 relative z-10"
+      >
+        <Image
+          src={imageSrc}
+          alt={title}
+          width={500}
+          height={300}
+          className="rounded-lg"
+        />
+      </motion.div>
+
+      <div className="absolute inset-0 bg-white z-0"></div>
+    </motion.div>
   );
 }

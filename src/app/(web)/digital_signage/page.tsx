@@ -172,10 +172,10 @@ export default function HeroSection() {
 
         {/* Text Content Overlay */}
         <div className="relative z-10 max-w-lg text-white">
-          <h4 className="text-gray-300 font-semibold text-lg">
+          <h4 className="text-white font-semibold text-lg">
             Indoor Digital Signage
           </h4>
-          <p className="text-gray-400 text-sm mb-2">
+          <p className="text-white text-sm mb-2 font-semibold">
             Touch Inquiry Interactive All-in-One Machine
           </p>
           <h1 className="text-4xl font-bold leading-tight">
@@ -222,7 +222,7 @@ export default function HeroSection() {
         </nav>
 
         {/* Sections */}
-        <div className="mt-20">
+        <div className="mt-20 w-full">
           <section id="overview" className="min-h-screen p-10 bg-white">
             <h2 className="text-3xl font-bold">Overview</h2>
             <p className="text-lg mt-4">
@@ -235,9 +235,9 @@ export default function HeroSection() {
             </p>
           </section>
 
-          <section id="features" className="min-h-screen p-20 bg-gray-50 ">
-            <h2 className="text-3xl font-bold">Key Features</h2>
-            <ul className="list-disc mt-4 ml-6">
+          <section id="features" className="min-h-screen  bg-gray-50 ">
+            <h2 className="text-3xl font-bold p-10">Key Features</h2>
+            <ul className="list-disc mt-4 ml-6 p-10">
               <li>HD & Ultra-HD vision (2K/4K resolution)</li>
               <li>Remote management and unified control</li>
               <li>Thick tempered glass</li>
@@ -250,10 +250,14 @@ export default function HeroSection() {
             </ul>
 
             {/* product appereance  */}
-            <div className="flex flex-col items-center p-10 bg-white">
-              <h2 className="text-3xl font-bold text-center mb-6">
-                Product Appearance
+            <div className="flex flex-col items-center bg-white w-full pt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+                <span className="relative inline-block p-2">
+                  Product Appearance
+                  <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+                </span>
               </h2>
+
               <Section
                 title="Enhance meetings with interactive whiteboards"
                 text="Boost team creativity and productivity with seamless meetings and presentations."
@@ -271,10 +275,14 @@ export default function HeroSection() {
             </div>
 
             {/* product Management system  */}
-            <div className="flex flex-col items-center bg-white">
-              <h2 className="text-3xl font-bold text-center mb-6">
-                Management System
+            <div className="flex flex-col items-center bg-white pt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+                <span className="relative inline-block p-2">
+                  Management System
+                  <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+                </span>
               </h2>
+
               <Section
                 title="Enhance meetings with interactive whiteboards"
                 text="Boost team creativity and productivity with seamless meetings and presentations."
@@ -306,9 +314,12 @@ export default function HeroSection() {
             </div>
 
             {/* Product Installation   */}
-            <div className="flex flex-col items-center bg-white">
-              <h2 className="text-3xl font-bold text-center mb-6">
-                Product Installation
+            <div className="flex flex-col items-center bg-white pt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+                <span className="relative inline-block p-2">
+                  Product Installation
+                  <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+                </span>
               </h2>
               <Section
                 title="Enhance meetings with interactive whiteboards"
@@ -338,8 +349,11 @@ export default function HeroSection() {
           </section>
 
           <section id="specifications" className="min-h-screen p-10 bg-white">
-            <h2 className="text-3xl font-bold text-center mb-6">
-              Product Specifications
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+              <span className="relative inline-block p-2">
+                Product Specifications
+                <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+              </span>
             </h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse border border-gray-300 text-sm text-center">

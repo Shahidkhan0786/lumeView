@@ -37,6 +37,12 @@ export default function Navbar() {
     }, 300); // Add slight delay to prevent instant closing
   };
 
+  const closeMenu = () => {
+    setIsMobileMenuOpen(false);
+    setIsMobileSubmenuOpen(false);
+    setIsMobileSubSubmenuOpen(false);
+  };
+
   return (
     <>
       {/* Top Bar */}
@@ -93,9 +99,10 @@ export default function Navbar() {
                 <ChevronDown size={16} />
               </button>
               {isMobileSubmenuOpen && (
-                <div className="w-full bg-gray-50 shadow-md flex flex-col items-center py-2">
+                <div className="w-full bg-gray-50 shadow-md flex flex-col items-center py-4">
                   <button
-                    className="flex items-center space-x-1 hover:text-accent"
+                    className="flex items-center spac e-x-1 hover:text-accent py-2"
+                    // onClick={closeMenu}
                     onClick={() =>
                       setIsMobileSubSubmenuOpen(!isMobileSubSubmenuOpen)
                     }
@@ -104,38 +111,64 @@ export default function Navbar() {
                     <ChevronRight size={16} />
                   </button>
                   {isMobileSubSubmenuOpen && (
-                    <div className="w-full bg-gray-100 shadow-md flex flex-col items-center py-2">
-                      <Link href="/all_in_one" className="hover:text-accent">
+                    <div className="w-full bg-gray-100 shadow-md flex flex-col items-center py-4">
+                      <Link
+                        href="/all_in_one"
+                        className="hover:text-accent py-2"
+                        onClick={closeMenu}
+                      >
                         All In One
                       </Link>
-                      <Link href="/all_in_one" className="hover:text-accent">
-                        all in one SE
+                      <Link
+                        href="/all_in_one"
+                        className="hover:text-accent py-2"
+                        onClick={closeMenu}
+                      >
+                        All In One SE
                       </Link>
                       <Link
                         href="/products/xboard-v7/variant2"
-                        className="hover:text-accent"
+                        className="hover:text-accent py-2"
+                        onClick={closeMenu}
                       >
-                        LED all in one
+                        LED All In One
                       </Link>
                     </div>
                   )}
                   <Link
-                    href="/products/v6-classic"
-                    className="hover:text-accent"
+                    href="/digital_signage"
+                    className="hover:text-accent py-2 "
+                    onClick={closeMenu}
                   >
-                    V6 Classic Series
+                    Digital Signage
                   </Link>
                   <Link
                     href="/products/v6-viewpro"
-                    className="hover:text-accent"
+                    className="hover:text-accent py-2 "
+                    onClick={closeMenu}
                   >
-                    V6 ViewPro Series
+                    Digital Frame
                   </Link>
                   <Link
                     href="/products/smart-blackboard"
-                    className="hover:text-accent"
+                    className="hover:text-accent py-2 "
+                    onClick={closeMenu}
                   >
-                    Smart Blackboard
+                    TV
+                  </Link>
+                  <Link
+                    href="/products/smart-blackboard"
+                    className="hover:text-accent py-2 "
+                    onClick={closeMenu}
+                  >
+                    LED Display
+                  </Link>
+                  <Link
+                    href="/products/smart-blackboard"
+                    className="hover:text-accent py-2 "
+                    onClick={closeMenu}
+                  >
+                    Touch Enquiry
                   </Link>
                 </div>
               )}
