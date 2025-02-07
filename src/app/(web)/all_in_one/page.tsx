@@ -88,6 +88,7 @@ export default function HeroSection() {
     },
     // Add remaining models similarly...
   ];
+
   const featuresData = [
     {
       title: "Ultra-high configuration, leaping to the top",
@@ -188,17 +189,8 @@ export default function HeroSection() {
 
         {/* Text Content Overlay */}
         <div className="relative z-10 max-w-lg text-white">
-
-          <h4 className="text-gray font-extrabold text-lg">
-            Indoor Digital Signage
-
           <h4 className="text-white font-semibold text-lg">
             Interactive Flat Panel
->>>>>>> Stashed changes
-=======
-          <h4 className="text-white font-semibold text-lg">
-            Interactive Flat Panel
->>>>>>> Stashed changes
           </h4>
           <p className="text-gray font-bold text-sm mb-2">
             Touch Inquiry Interactive All-in-One Machine
@@ -260,109 +252,6 @@ export default function HeroSection() {
             </p>
           </section>
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          <section id="features" className="min-h-screen p-20 bg-gray-50 ">
-            <h2 className="text-3xl font-bold">Key Features</h2>
-            <ul className="list-disc mt-4 ml-6">
-              <li>HD & Ultra-HD vision (2K/4K resolution)</li>
-              <li>Remote management and unified control</li>
-              <li>Thick tempered glass</li>
-              <li>Auto-loop playback with intelligent split-screen modes</li>
-              <li>Supports remote management & control</li>
-              <li>Multi-touch precise touchscreen (IR/Capacitive Touch)</li>
-              <li>24/7 uninterrupted operation</li>
-              <li>Custom power on/off scheduling</li>
-              <li>Horizontal & vertical screen switching</li>
-            </ul>
-
-            {/* product appereance  */}
-            <div className="flex flex-col items-center p-10 bg-white">
-              <h2 className="text-3xl font-bold text-center mb-6">
-                Product Appearance
-              </h2>
-              <Section
-                title="Enhance meetings with interactive whiteboards"
-                text="Boost team creativity and productivity with seamless meetings and presentations."
-                imageSrc="/images/indoor-digital-signage.png"
-                bgColor="bg-primary-light"
-                reverse={false}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/indoor-digital-signage1.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-            </div>
-
-            {/* product Management system  */}
-            <div className="flex flex-col items-center bg-white">
-              <h2 className="text-3xl font-bold text-center mb-6">
-                Management System
-              </h2>
-              <Section
-                title="Enhance meetings with interactive whiteboards"
-                text="Boost team creativity and productivity with seamless meetings and presentations."
-                imageSrc="/images/managment-system1.png"
-                bgColor="bg-primary-light"
-                reverse={false}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/managment-system2.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/managment-system3.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/managment-system4.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-            </div>
-
-            {/* Product Installation   */}
-            <div className="flex flex-col items-center bg-white">
-              <h2 className="text-3xl font-bold text-center mb-6">
-                Product Installation
-              </h2>
-              <Section
-                title="Enhance meetings with interactive whiteboards"
-                text="Boost team creativity and productivity with seamless meetings and presentations."
-                imageSrc="/images/product-installation.png"
-                bgColor="bg-primary-light"
-                reverse={false}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/product-installation2.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/product-installation3.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-            </div>
-
-            {/* Product Application  */}
-            <ProductApplication />
-=======
           <section className="bg-gray-50 py-12 px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-700">
               Key Features
@@ -431,169 +320,6 @@ export default function HeroSection() {
                     </p>
                   </div>
                 ))}
-            </div>
->>>>>>> Stashed changes
-=======
-          <section className="bg-gray-50 py-12 px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-700">
-              Key Features
-            </h2>
-
-            {/* Two full-width feature cards */}
-            <div className="flex flex-col gap-6 mt-10">
-              <ul className="list-disc mt-4 ml-6 p-10">
-                <li>HD & Ultra-HD vision (2K/4K resolution)</li>
-                <li>Remote management and unified control</li>
-                <li>Thick tempered glass</li>
-                <li>Auto-loop playback with intelligent split-screen modes</li>
-                <li>Supports remote management & control</li>
-                <li>Multi-touch precise touchscreen (IR/Capacitive Touch)</li>
-                <li>24/7 uninterrupted operation</li>
-                <li>Custom power on/off scheduling</li>
-                <li>Horizontal & vertical screen switching</li>
-              </ul>
-              {featuresData
-                .filter((feature) => feature.isFullWidth)
-                .map((feature, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center gap-6"
-                  >
-                    <div className="w-full md:w-1/4">
-                      <Image
-                        src={feature.image}
-                        alt={feature.title}
-                        width={200}
-                        height={120}
-                        className="rounded-lg"
-                      />
-                    </div>
-                    <div className="w-full md:w-3/4">
-                      <h3 className="text-xl font-semibold text-gray-800">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-600 mt-2">{feature.text}</p>
-                    </div>
-                  </div>
-                ))}
-            </div>
-
-            {/* Grid Layout for Other Features */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-              {featuresData
-                .filter((feature) => !feature.isFullWidth)
-                .map((feature, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center"
-                  >
-                    <Image
-                      src={feature.image}
-                      alt={feature.title}
-                      width={150}
-                      height={100}
-                      className="rounded-lg"
-                    />
-                    <h3 className="text-xl font-semibold text-gray-800 mt-4">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 mt-2 text-center">
-                      {feature.text}
-                    </p>
-                  </div>
-                ))}
-            </div>
->>>>>>> Stashed changes
-          </section>
-
-          {/* product appereance  */}
-          <div className="flex flex-col items-center bg-white w-full pt-8">
-<<<<<<< Updated upstream
-=======
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
-              <span className="relative inline-block p-2">
-                Product Appearance
-                <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
-              </span>
-            </h2>
-
-            <Section
-              title="Enhance meetings with interactive whiteboards"
-              text="Boost team creativity and productivity with seamless meetings and presentations."
-              imageSrc="/images/all"
-              bgColor="bg-primary-light"
-              reverse={false}
-            />
-            <Section
-              title="Leveraging both LED and LCD technologies"
-              text="Supports conference rooms, production studios, and companies with different presentation environments."
-              imageSrc="/images/indoor-digital-signage1.png"
-              bgColor="bg-secondary-light"
-              reverse={true}
-            />
-          </div>
-
-          <section id="specifications" className="min-h-screen p-10 bg-white">
->>>>>>> Stashed changes
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
-              <span className="relative inline-block p-2">
-                Product Appearance
-                <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
-              </span>
-            </h2>
-
-            <Section
-              title="Enhance meetings with interactive whiteboards"
-              text="Boost team creativity and productivity with seamless meetings and presentations."
-              imageSrc="/images/all"
-              bgColor="bg-primary-light"
-              reverse={false}
-            />
-            <Section
-              title="Leveraging both LED and LCD technologies"
-              text="Supports conference rooms, production studios, and companies with different presentation environments."
-              imageSrc="/images/indoor-digital-signage1.png"
-              bgColor="bg-secondary-light"
-              reverse={true}
-            />
-          </div>
-
-          <section id="specifications" className="min-h-screen p-10 bg-white">
-            <h2 className="text-3xl font-bold text-center mb-6">
-              Product Specifications
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-gray-300 text-sm text-center">
-                <thead>
-                  <tr className="bg-gray-200">
-                    <th className="border border-gray-300 p-2">Feature</th>
-                    {models.map((model, index) => (
-                      <th key={index} className="border border-gray-300 p-2">
-                        {model.name}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.keys(models[0])
-                    .slice(1)
-                    .map((key, rowIndex) => (
-                      <tr key={rowIndex}>
-                        <td className="border border-gray-300 p-2 font-semibold">
-                          {key.replace(/([A-Z])/g, " $1").trim()}
-                        </td>
-                        {models.map((model, colIndex) => (
-                          <td
-                            key={colIndex}
-                            className="border border-gray-300 p-2"
-                          >
-                            {model[key]}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
             </div>
           </section>
         </div>
