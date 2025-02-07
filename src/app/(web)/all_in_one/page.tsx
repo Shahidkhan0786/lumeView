@@ -88,6 +88,40 @@ export default function HeroSection() {
     },
     // Add remaining models similarly...
   ];
+  const featuresData = [
+    {
+      title: "Ultra-high configuration, leaping to the top",
+      text: "Smart writing, ultra-clear camera, 4K ultra-clear display, 8-meter long-distance sound pickup. Android / Windows optional.",
+      image: "/images/all-in-one/ultra-high-configuration.png",
+      isFullWidth: true,
+    },
+    {
+      title: "Simple and stylish",
+      text: "It integrates a large screen, electronic whiteboard, computer, microphone, and audio functions. Simple gray upper and lower borders, combining technology and beauty.",
+      image: "/images/all-in-one/simple.png",
+      isFullWidth: true,
+    },
+    {
+      title: "Screen sharing, writing interaction",
+      text: "48-megapixel video conferencing: ultra-clear, compatible with multiple conference platforms.",
+      image: "/images/all-in-one/whiteboard-displaying-48-megapixel.png",
+    },
+    {
+      title: "4K ultra-clear display",
+      text: "Vivid and stunning images. Glass hardness ≥7H. Anti-glare technology.",
+      image: "/images/all-in-one/cutting-edge-4K-ultra-clear-display.png",
+    },
+    {
+      title: "8 meters long distance sound pickup",
+      text: "Say goodbye to unclear calls. 8-array microphone with intelligent noise reduction & echo cancellation.",
+      image: "/images/all-in-one/8-meters-long-distance-sound-pickup.png",
+    },
+    {
+      title: "Restore the pen and paper experience",
+      text: "Intelligent writing, equipped with infrared touch technology, ultra-low writing delay of 0.07 seconds, every stroke seems to fall on paper.",
+      image: "/images/all-in-one/digital-pen-writing.png",
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -154,14 +188,19 @@ export default function HeroSection() {
 
         {/* Text Content Overlay */}
         <div className="relative z-10 max-w-lg text-white">
+<<<<<<< Updated upstream
           <h4 className="text-gray font-extrabold text-lg">
             Indoor Digital Signage
+=======
+          <h4 className="text-white font-semibold text-lg">
+            Interactive Flat Panel
+>>>>>>> Stashed changes
           </h4>
           <p className="text-gray font-bold text-sm mb-2">
             Touch Inquiry Interactive All-in-One Machine
           </p>
           <h1 className="text-4xl font-bold leading-tight">
-            Elevate Advertising with Smart Displays
+            Enjoy the experience of A new paradigm of Smart conference
           </h1>
           <Link
             href="/files/DataSheet-Indoor Digital Signage-20250122.pdf"
@@ -217,6 +256,7 @@ export default function HeroSection() {
             </p>
           </section>
 
+<<<<<<< Updated upstream
           <section id="features" className="min-h-screen p-20 bg-gray-50 ">
             <h2 className="text-3xl font-bold">Key Features</h2>
             <ul className="list-disc mt-4 ml-6">
@@ -317,7 +357,103 @@ export default function HeroSection() {
 
             {/* Product Application  */}
             <ProductApplication />
+=======
+          <section className="bg-gray-50 py-12 px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-700">
+              Key Features
+            </h2>
+
+            {/* Two full-width feature cards */}
+            <div className="flex flex-col gap-6 mt-10">
+              <ul className="list-disc mt-4 ml-6 p-10">
+                <li>HD & Ultra-HD vision (2K/4K resolution)</li>
+                <li>Remote management and unified control</li>
+                <li>Thick tempered glass</li>
+                <li>Auto-loop playback with intelligent split-screen modes</li>
+                <li>Supports remote management & control</li>
+                <li>Multi-touch precise touchscreen (IR/Capacitive Touch)</li>
+                <li>24/7 uninterrupted operation</li>
+                <li>Custom power on/off scheduling</li>
+                <li>Horizontal & vertical screen switching</li>
+              </ul>
+              {featuresData
+                .filter((feature) => feature.isFullWidth)
+                .map((feature, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center gap-6"
+                  >
+                    <div className="w-full md:w-1/4">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        width={200}
+                        height={120}
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <div className="w-full md:w-3/4">
+                      <h3 className="text-xl font-semibold text-gray-800">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 mt-2">{feature.text}</p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+
+            {/* Grid Layout for Other Features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+              {featuresData
+                .filter((feature) => !feature.isFullWidth)
+                .map((feature, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center"
+                  >
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      width={150}
+                      height={100}
+                      className="rounded-lg"
+                    />
+                    <h3 className="text-xl font-semibold text-gray-800 mt-4">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 mt-2 text-center">
+                      {feature.text}
+                    </p>
+                  </div>
+                ))}
+            </div>
+>>>>>>> Stashed changes
           </section>
+
+          {/* product appereance  */}
+          <div className="flex flex-col items-center bg-white w-full pt-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+              <span className="relative inline-block p-2">
+                Product Appearance
+                <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+              </span>
+            </h2>
+
+            <Section
+              title="Enhance meetings with interactive whiteboards"
+              text="Boost team creativity and productivity with seamless meetings and presentations."
+              imageSrc="/images/all"
+              bgColor="bg-primary-light"
+              reverse={false}
+            />
+            <Section
+              title="Leveraging both LED and LCD technologies"
+              text="Supports conference rooms, production studios, and companies with different presentation environments."
+              imageSrc="/images/indoor-digital-signage1.png"
+              bgColor="bg-secondary-light"
+              reverse={true}
+            />
+          </div>
 
           <section id="specifications" className="min-h-screen p-10 bg-white">
             <h2 className="text-3xl font-bold text-center mb-6">
