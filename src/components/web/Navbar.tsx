@@ -143,7 +143,7 @@ export default function Navbar() {
                     Digital Signage
                   </Link>
                   <Link
-                    href="/products/v6-viewpro"
+                    href="/digital-frame"
                     className="hover:text-accent py-2 "
                     onClick={closeMenu}
                   >
@@ -273,7 +273,7 @@ export default function Navbar() {
                   </div>
 
                   <Link
-                    href="/products/v6-viewpro"
+                    href="/digital-frame"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
                     Digital Frame
