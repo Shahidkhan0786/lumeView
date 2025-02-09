@@ -150,11 +150,11 @@ export default function Navbar() {
                     Digital Frame
                   </Link>
                   <Link
-                    href="/products/smart-blackboard"
+                    href="/smart-tv"
                     className="hover:text-accent py-2 "
                     onClick={closeMenu}
                   >
-                    TV
+                    Smart TV
                   </Link>
                   <Link
                     href="/products/smart-blackboard"
@@ -279,10 +279,10 @@ export default function Navbar() {
                     Digital Frame
                   </Link>
                   <Link
-                    href="/products/smart-blackboard"
+                    href="/smart-tv"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
-                    TV
+                    Smart TV
                   </Link>
                   <Link
                     href="/products/smart-blackboard"

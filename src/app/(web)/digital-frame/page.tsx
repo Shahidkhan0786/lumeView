@@ -179,7 +179,7 @@ export default function HeroSection() {
             Craftsmanship Excellence & High-Definition Visuals
           </h1>
           <Link
-            href="/files/DataSheet-Indoor Digital Signage-20250122.pdf"
+            href="/files/digital-frame.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
