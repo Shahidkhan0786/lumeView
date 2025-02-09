@@ -14,80 +14,79 @@ export default function HeroSection() {
   const placeholderRef = useRef(null);
   const debounceTimeout = useRef(null);
   const lastStickyPosition = useRef(0); // Store the last position where it became sticky
-  const models = [
+  const tableData = [
     {
-      name: "LM-LG325N",
-      screenSize: '32"',
-      resolution: "1920 x 1080",
-      brightness: "350 cd/m²",
-      contrastRatio: "1200:1",
-      viewingAngle: "178°",
-      backlight: "LED",
-      touchTechnology: "IR Touch",
-      os: "Android 9.0",
-      ramRom: "2G + 32G",
-      speaker: "2 x 15W",
-      powerConsumption: "≤ 300W",
-      hdmiInput: "3",
-      usbPort: "3",
-      wifi: "Yes",
-      installationMode: "Wall-Mounting / Floor-Mounting",
+      size: '21.5"',
+      color: "Wood, Teak, Coffee",
+      appearance: "565*356.8*69",
+      displayArea: "473*264.8",
+      brightness: "≥350cd/m²",
+      resolution: "1920*1080",
+      power: "≤40W",
     },
     {
-      name: "LM-LG435N",
-      screenSize: '43"',
-      resolution: "1920 x 1080",
-      brightness: "350 cd/m²",
-      contrastRatio: "1200:1",
-      viewingAngle: "178°",
-      backlight: "LED",
-      touchTechnology: "IR Touch",
-      os: "Android 9.0",
-      ramRom: "2G + 32G",
-      speaker: "2 x 15W",
-      powerConsumption: "≤ 300W",
-      hdmiInput: "3",
-      usbPort: "3",
-      wifi: "Yes",
-      installationMode: "Wall-Mounting / Floor-Mounting",
+      size: '23.8"',
+      color: "Wood, Teak, Coffee",
+      appearance: "616*380.5*69.2",
+      displayArea: "524*293.5",
+      brightness: "≥350cd/m²",
+      resolution: "1920*1080",
+      power: "≤40W",
     },
     {
-      name: "LM-LG505N",
-      screenSize: '50"',
-      resolution: "3840 x 2160",
-      brightness: "400 cd/m²",
-      contrastRatio: "1300:1",
-      viewingAngle: "178°",
-      backlight: "LED",
-      touchTechnology: "IR Touch",
-      os: "Android 9.0",
-      ramRom: "3G + 32G",
-      speaker: "2 x 15W",
-      powerConsumption: "≤ 350W",
-      hdmiInput: "3",
-      usbPort: "3",
-      wifi: "Yes",
-      installationMode: "Wall-Mounting / Floor-Mounting",
+      size: '27"',
+      color: "Wood, Teak, Coffee",
+      appearance: "686.9*425.3*70.7",
+      displayArea: "594.9*333.3",
+      brightness: "≥350cd/m²",
+      resolution: "1920*1080",
+      power: "≤40W",
     },
     {
-      name: "LM-LG555N",
-      screenSize: '55"',
-      resolution: "3840 x 2160",
-      brightness: "400 cd/m²",
-      contrastRatio: "1300:1",
-      viewingAngle: "178°",
-      backlight: "LED",
-      touchTechnology: "IR Touch",
-      os: "Android 9.0",
-      ramRom: "3G + 32G",
-      speaker: "2 x 15W",
-      powerConsumption: "≤ 350W",
-      hdmiInput: "3",
-      usbPort: "3",
-      wifi: "Yes",
-      installationMode: "Wall-Mounting / Floor-Mounting",
+      size: '32"',
+      color: "Wood, Teak, Coffee",
+      appearance: "789*483.9*68.6",
+      displayArea: "697.4*391.9",
+      brightness: "≥350cd/m²",
+      resolution: "1920*1080",
+      power: "≤50W",
     },
-    // Add remaining models similarly...
+    {
+      size: '43"',
+      color: "Wood, Teak, Coffee",
+      appearance: "1032.2*615.4*78",
+      displayArea: "940.2*528.4",
+      brightness: "≥350cd/m²",
+      resolution: "1920*1080",
+      power: "≤118W",
+    },
+    {
+      size: '49"',
+      color: "Wood, Teak, Coffee",
+      appearance: "1164.8*695.7*78",
+      displayArea: "1072.8*603",
+      brightness: "≥350cd/m²",
+      resolution: "1920*1080",
+      power: "≤168W",
+    },
+    {
+      size: '55"',
+      color: "Wood, Teak, Coffee",
+      appearance: "1300.6*771.4*77.8",
+      displayArea: "1208.6*679.4",
+      brightness: "≥350cd/m²",
+      resolution: "1920*1080",
+      power: "≤168W",
+    },
+    {
+      size: '65"',
+      color: "Wood, Teak, Coffee",
+      appearance: "1519.48*894.52*80.7",
+      displayArea: "1427.48*802.52",
+      brightness: "≥350cd/m²",
+      resolution: "1920*1080",
+      power: "≤168W",
+    },
   ];
 
   useEffect(() => {
@@ -161,7 +160,7 @@ export default function HeroSection() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/images/digital_signage/indoor-digital-signage.png"
+            src="/images/digital-frame/banner-digital-frame.png"
             alt="Digital Signage Display"
             layout="fill"
             objectFit="cover"
@@ -172,14 +171,12 @@ export default function HeroSection() {
 
         {/* Text Content Overlay */}
         <div className="relative z-10 max-w-lg text-white">
-          <h4 className="text-white font-semibold text-lg">
-            Indoor Digital Signage
-          </h4>
+          <h4 className="text-white font-semibold text-lg">Digital Frame</h4>
           <p className="text-white text-sm mb-2 font-semibold">
-            Touch Inquiry Interactive All-in-One Machine
+            Frame Smart Wall-mounted Advertising Display
           </p>
           <h1 className="text-4xl font-bold leading-tight">
-            Elevate Advertising with Smart Displays
+            Craftsmanship Excellence & High-Definition Visuals
           </h1>
           <Link
             href="/files/DataSheet-Indoor Digital Signage-20250122.pdf"
@@ -235,117 +232,146 @@ export default function HeroSection() {
             </p>
           </section>
 
-          <section id="features" className="min-h-screen  bg-gray-50 ">
-            <h2 className="text-3xl font-bold p-10">Key Features</h2>
-            <ul className="list-disc mt-4 ml-6 p-10">
-              <li>HD & Ultra-HD vision (2K/4K resolution)</li>
-              <li>Remote management and unified control</li>
-              <li>Thick tempered glass</li>
-              <li>Auto-loop playback with intelligent split-screen modes</li>
-              <li>Supports remote management & control</li>
-              <li>Multi-touch precise touchscreen (IR/Capacitive Touch)</li>
-              <li>24/7 uninterrupted operation</li>
-              <li>Custom power on/off scheduling</li>
-              <li>Horizontal & vertical screen switching</li>
-            </ul>
+          <section id="features" className="  bg-gray-50 py-2">
+            <h2 className="text-4xl font-extrabold text-gray-800 mb-6 text-center py-6">
+              Key Features
+            </h2>
 
-            {/* product appereance  */}
+            {/* Feature List */}
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto text-lg text-gray-700 font-semibold">
+              <li>✅ High-definition Large Screen</li>
+              <li>✅ Split-screen Playback</li>
+              <li>✅ Wireless Connection</li>
+              <li>✅ Elegant Design</li>
+              <li>✅ Loop Playback</li>
+              <li>✅ Mobile Phone Operation</li>
+              <li>✅ Power Recovery</li>
+              <li>✅ Horizontal & Vertical Wall Mounting</li>
+            </ul>
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/images/digital-frame/features.png" // Place your image in the public folder
+                alt="Key Features"
+                width={800} // Adjust as needed
+                height={400}
+                className="rounded-lg shadow-lg"
+                priority // Optimized loading
+              />
+            </div>
+
+            {/* Display Quality */}
             <div className="flex flex-col items-center bg-white w-full pt-8">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
                 <span className="relative inline-block p-2">
-                  Product Appearance
+                  Display Quality
                   <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
                 </span>
               </h2>
 
               <Section
-                title="Enhance meetings with interactive whiteboards"
-                text="Boost team creativity and productivity with seamless meetings and presentations."
-                imageSrc="/images/indoor-digital-signage.png"
+                title=" High-definition Vision, Vivid Colors"
+                points={[
+                  "High Definition Image Processing Engine",
+                  "1080P HD LCD DISPLAY SCREEN",
+                  "Higher brightness and contrast",
+                  "Rich and vivid colors",
+                  "Clear and vivid image quality",
+                  "Intelligent horizontal & vertical screen switching",
+                ]}
+                imageSrc="/images/digital-frame/display-quality.png"
                 bgColor="bg-primary-light"
                 reverse={false}
               />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/indoor-digital-signage1.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
             </div>
 
-            {/* product Management system  */}
-            <div className="flex flex-col items-center bg-white pt-8">
+            {/*  Multimedia Capabilities */}
+            <div className="flex flex-col items-center bg-white w-full pt-8">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
                 <span className="relative inline-block p-2">
-                  Management System
+                  Multimedia Capabilities
                   <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
                 </span>
               </h2>
 
               <Section
-                title="Enhance meetings with interactive whiteboards"
-                text="Boost team creativity and productivity with seamless meetings and presentations."
-                imageSrc="/images/managment-system1.png"
+                title=" High-definition Vision, Vivid Colors"
+                points={[
+                  "Supports video, pictures, subtitles, and time display",
+                  "Formats: MP4, AVI, DIVX, MOV, etc.",
+                  "Image Carousel: JPG, GIF, BMP, PNG",
+                  "PDF, Word, TXT Support",
+                  "Music Playback: MP3, M4A, WMA",
+                  "Split-screen function",
+                  "Scrolling subtitles",
+                ]}
+                imageSrc="/images/digital-frame/Multimedia.png"
                 bgColor="bg-primary-light"
                 reverse={false}
               />
+
               <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/managment-system2.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/managment-system3.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/managment-system4.png"
-                bgColor="bg-secondary-light"
+                title="Cloud Intelligent Publishing"
+                points={[
+                  "Remote management",
+                  "Real-time monitoring",
+                  "Updates via mobile, tablet, or PC",
+                ]}
+                imageSrc="/images/digital-frame/cloud-intelligent-publishing.png"
+                bgColor="bg-primary-light"
                 reverse={true}
               />
             </div>
 
-            {/* Product Installation   */}
-            <div className="flex flex-col items-center bg-white pt-8">
+            {/*  Frame Color Variations */}
+            <div className="flex flex-col items-center bg-white w-full pt-8">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
                 <span className="relative inline-block p-2">
-                  Product Installation
+                  Frame Color Variations
                   <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
                 </span>
               </h2>
+
               <Section
-                title="Enhance meetings with interactive whiteboards"
-                text="Boost team creativity and productivity with seamless meetings and presentations."
-                imageSrc="/images/product-installation.png"
+                title="Automatically Loop Playback"
+                points={[
+                  "Customizable intervals for video and image loop playback",
+                  "Scrolling subtitles for promotions.",
+                ]}
+                imageSrc="/images/digital-frame/Multimedia.png"
                 bgColor="bg-primary-light"
                 reverse={false}
               />
+
               <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/product-installation2.png"
-                bgColor="bg-secondary-light"
-                reverse={true}
-              />
-              <Section
-                title="Leveraging both LED and LCD technologies"
-                text="Supports conference rooms, production studios, and companies with different presentation environments."
-                imageSrc="/images/product-installation3.png"
-                bgColor="bg-secondary-light"
+                title="Available Frame Colors"
+                points={["Natural Wood", "Teak", "Coffee"]}
+                imageSrc="/images/digital-frame/colors.png"
+                bgColor="bg-primary-light"
                 reverse={true}
               />
             </div>
 
-            {/* Product Application  */}
-            <ProductApplication />
+            {/*  Build & Design */}
+            <div className="flex flex-col items-center bg-white w-full pt-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+                <span className="relative inline-block p-2">
+                  Build & Design
+                  <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+                </span>
+              </h2>
+
+              <Section
+                title="Quality is Reflected in Details"
+                points={[
+                  "Solid Wood Frame – Comfortable, practical, and safe.",
+                  "HD Image Quality – 1080P decoding for immersive experience.",
+                  "Built-in Speaker – Audio-visual synchronization for a clear sound.",
+                ]}
+                imageSrc="/images/digital-frame/build.png"
+                bgColor="bg-primary-light"
+                reverse={false}
+              />
+            </div>
           </section>
 
           <section id="specifications" className="min-h-screen p-10 bg-white">
@@ -355,36 +381,97 @@ export default function HeroSection() {
                 <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
               </span>
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-gray-300 text-sm text-center">
+            <div className="overflow-x-auto rounded-lg">
+              <table className="w-full border border-gray-300 text-sm text-center shadow-md">
                 <thead>
-                  <tr className="bg-gray-200">
-                    <th className="border border-gray-300 p-2">Feature</th>
-                    {models.map((model, index) => (
-                      <th key={index} className="border border-gray-300 p-2">
-                        {model.name}
-                      </th>
-                    ))}
+                  <tr className="bg-gray-800 text-white">
+                    <th className="px-4 py-2">Screen Size</th>
+                    <th className="px-4 py-2">Resolution</th>
+                    <th className="px-4 py-2">Refresh Rate</th>
+                    <th className="px-4 py-2">RAM</th>
+                    <th className="px-4 py-2">ROM</th>
+                    <th className="px-4 py-2">Ports</th>
+                    <th className="px-4 py-2">CPU</th>
+                    <th className="px-4 py-2">OS</th>
+                    <th className="px-4 py-2">Aspect Ratio</th>
+                    <th className="px-4 py-2">Viewing Angle</th>
+                    <th className="px-4 py-2">Power</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {Object.keys(models[0])
-                    .slice(1)
-                    .map((key, rowIndex) => (
-                      <tr key={rowIndex}>
-                        <td className="border border-gray-300 p-2 font-semibold">
-                          {key.replace(/([A-Z])/g, " $1").trim()}
-                        </td>
-                        {models.map((model, colIndex) => (
-                          <td
-                            key={colIndex}
-                            className="border border-gray-300 p-2"
-                          >
-                            {model[key]}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
+                <tbody className="divide-y divide-gray-200">
+                  {[
+                    { size: "21.5", power: "≤40W" },
+                    { size: "23.8", power: "≤50W" },
+                    { size: "27", power: "≤60W" },
+                    { size: "32", power: "≤80W" },
+                    { size: "43", power: "≤110W" },
+                    { size: "49", power: "≤120W" },
+                    { size: "55", power: "≤150W" },
+                    { size: "65", power: "≤180W" },
+                  ].map((item, index) => (
+                    <tr
+                      key={index}
+                      className={`${
+                        index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                      } hover:bg-gray-100`}
+                    >
+                      <td className="px-4 py-2 font-medium text-gray-700">
+                        {item.size}"
+                      </td>
+                      <td className="px-4 py-2">1920x1080</td>
+                      <td className="px-4 py-2">60Hz</td>
+                      <td className="px-4 py-2">1GB</td>
+                      <td className="px-4 py-2">32GB</td>
+                      <td className="px-4 py-2">
+                        USB 2.0 x2, HDMI, RJ45, WiFi
+                      </td>
+                      <td className="px-4 py-2">A133</td>
+                      <td className="px-4 py-2">Android</td>
+                      <td className="px-4 py-2">16:9</td>
+                      <td className="px-4 py-2">178°</td>
+                      <td className="px-4 py-2 font-semibold text-gray-900">
+                        {item.power}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="overflow-x-auto rounded-lg mt-6">
+              <table className="w-full border border-gray-300 text-sm text-center shadow-md">
+                <thead>
+                  <tr className="bg-gray-800 text-white">
+                    <th className="px-4 py-2">Screen Size</th>
+                    <th className="px-4 py-2">Color</th>
+                    <th className="px-4 py-2">Appearance (mm)</th>
+                    <th className="px-4 py-2">Display Area (mm)</th>
+                    <th className="px-4 py-2">Brightness</th>
+                    <th className="px-4 py-2">Resolution</th>
+                    <th className="px-4 py-2">Power</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  {tableData.map((item, index) => (
+                    <tr
+                      key={index}
+                      className={`${
+                        index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                      } hover:bg-gray-100`}
+                    >
+                      <td className="px-4 py-2 font-medium text-gray-700">
+                        {item.size}
+                      </td>
+                      <td className="px-4 py-2">{item.color}</td>
+                      <td className="px-4 py-2">{item.appearance}</td>
+                      <td className="px-4 py-2">{item.displayArea}</td>
+                      <td className="px-4 py-2">{item.brightness}</td>
+                      <td className="px-4 py-2">{item.resolution}</td>
+                      <td className="px-4 py-2 font-semibold text-gray-900">
+                        {item.power}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -395,7 +482,7 @@ export default function HeroSection() {
   );
 }
 
-function Section({ title, text, imageSrc, bgColor, reverse }) {
+function Section({ title, text, points, imageSrc, bgColor, reverse }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -406,6 +493,7 @@ function Section({ title, text, imageSrc, bgColor, reverse }) {
         reverse ? "md:flex-row-reverse" : ""
       } relative overflow-hidden`}
     >
+      {/* Text & Points Section */}
       <motion.div
         initial={{ opacity: 0, x: reverse ? 100 : -100 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -413,10 +501,23 @@ function Section({ title, text, imageSrc, bgColor, reverse }) {
         viewport={{ once: false, amount: 0.3 }}
         className="md:w-1/2 p-4 relative z-10"
       >
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
-        <p className="text-lg">{text}</p>
+        <h3 className="text-2xl font-bold mb-4">{title}</h3>
+
+        {/* Conditionally Render Text or Points */}
+        {text && <p className="text-lg">{text}</p>}
+
+        {points && (
+          <ul className="text-lg list-disc list-inside space-y-2">
+            {points.map((point, index) => (
+              <li key={index} className="flex items-center">
+                ✅ {point}
+              </li>
+            ))}
+          </ul>
+        )}
       </motion.div>
 
+      {/* Image Section */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -433,6 +534,7 @@ function Section({ title, text, imageSrc, bgColor, reverse }) {
         />
       </motion.div>
 
+      {/* Background Layer */}
       <div className="absolute inset-0 bg-white z-0"></div>
     </motion.div>
   );
