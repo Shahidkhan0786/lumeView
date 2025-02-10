@@ -336,7 +336,7 @@ export default function Navbar() {
           {/* Contact Sales Button */}
           <Button
             variant="default"
-            className="hidden md:block bg-accent text-white hover:bg-highlight"
+            className="hidden md:block bg-primary text-white hover:bg-accent"
             onClick={handleScrollToContact}
           >
             Contact Sales

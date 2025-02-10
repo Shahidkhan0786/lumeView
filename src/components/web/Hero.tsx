@@ -207,7 +207,7 @@ export default function HeroSlider() {
             {slides[currentIndex].subtitle}
           </motion.p>
         </AnimatePresence>
-        <Button className="mt-6 bg-accent hover:bg-highlight px-6 py-3 text-lg rounded-lg">
+        <Button className="mt-6 bg-primary hover:bg-accent px-6 py-3 text-lg rounded-lg">
           <a href={slides[currentIndex].link}>Learn More</a>
         </Button>
       </div>

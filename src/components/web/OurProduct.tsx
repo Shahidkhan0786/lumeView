@@ -93,7 +93,7 @@ export default function OurProducts() {
                     {product.description}
                   </p>
                   <Link href={product.link}>
-                    <Button className="bg-accent text-white w-full hover:bg-highlight">
+                    <Button className="bg-primary text-white w-full hover:bg-accent">
                       Learn More
                     </Button>
                   </Link>

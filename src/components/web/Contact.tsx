@@ -93,9 +93,9 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-3 rounded-lg font-medium hover:bg-blue-700 transition-all"
+            className="w-full bg-primary  text-white p-3 rounded-lg font-medium hover:bg-accent transition-all"
           >
-            NEXT
+            SUBMIT
           </button>
 
           {message && (

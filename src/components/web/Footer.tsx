@@ -98,7 +98,7 @@ export default function Footer() {
                 placeholder="Enter your E-mail Address"
                 className="bg-gray-700 text-white px-4 py-3 rounded-l-md w-full focus:outline-none"
               />
-              <button className="bg-accent hover:bg-highlight text-black px-6 py-3 rounded-r-md font-semibold">
+              <button className="bg-primary hover:bg-accent text-white px-6 py-3 rounded-r-md font-semibold">
                 SUBMIT
               </button>
             </div>
