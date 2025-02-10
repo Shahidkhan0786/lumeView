@@ -43,6 +43,13 @@ export default function Navbar() {
     setIsMobileSubSubmenuOpen(false);
   };
 
+  const handleScrollToContact = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling effect
+    }
+  };
+
   return (
     <>
       {/* Top Bar */}
@@ -330,6 +337,7 @@ export default function Navbar() {
           <Button
             variant="default"
             className="hidden md:block bg-accent text-white hover:bg-highlight"
+            onClick={handleScrollToContact}
           >
             Contact Sales
           </Button>
