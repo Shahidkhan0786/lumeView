@@ -12,7 +12,7 @@ export default function NotFoundPage() {
         transition={{ duration: 1 }}
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/images/404-bg.jpg')",
+          backgroundImage: "url('/images/404-bgg.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "brightness(0.3)",
