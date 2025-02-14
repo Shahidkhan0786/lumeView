@@ -9,7 +9,7 @@ export default function AboutUs() {
     <div className="bg-white text-gray-800 mt-24">
       {/* Hero Section with Background Image & Dark Overlay */}
       <section
-        className="relative w-full min-h-[80vh] flex items-center justify-center text-center p-8 bg-cover bg-center"
+        className="relative w-full min-h-[85vh] flex items-center justify-center text-center p-8 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/about_us/about.png')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>

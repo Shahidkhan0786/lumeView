@@ -21,7 +21,7 @@ export default function FactoryTour() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative w-full h-[500px] overflow-hidden"
+        className="relative w-full min-h-[85vh] overflow-hidden"
       >
         <video
           autoPlay
