@@ -21,6 +21,7 @@ export default function Navbar() {
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSubmenuOpen, setIsMobileSubmenuOpen] = useState(false);
+  const [isMobileExploreMenuOpen, setIsMobileExploreMenuOpen] = useState(false);
   const [isMobileSubSubmenuOpen, setIsMobileSubSubmenuOpen] = useState(false);
   const dropdownRef = useRef(null);
   // Add timeout ref to prevent submenu from closing instantly
@@ -188,9 +189,34 @@ export default function Navbar() {
               <Link href="/support" className="hover:text-accent">
                 Support
               </Link>
-              <Link href="/explore" className="hover:text-accent">
-                Explore
-              </Link>
+
+              <button
+                className="flex items-center space-x-1 hover:text-accent"
+                onClick={() =>
+                  setIsMobileExploreMenuOpen(!isMobileExploreMenuOpen)
+                }
+              >
+                <span>Explore</span>
+                <ChevronDown size={16} />
+              </button>
+              {isMobileExploreMenuOpen && (
+                <div className="w-full bg-gray-50 shadow-md flex flex-col items-center py-4">
+                  <Link
+                    href="/about_us"
+                    className="hover:text-accent py-2 "
+                    onClick={closeMenu}
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/factory_tour"
+                    className="hover:text-accent py-2 "
+                    onClick={closeMenu}
+                  >
+                    Factory Tour
+                  </Link>
+                </div>
+              )}
             </div>
           )}
 
