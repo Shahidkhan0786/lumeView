@@ -42,7 +42,7 @@ export default function CloudinaryVideo({ src }) {
       {/* Cloudinary Video */}
       <video
         ref={videoRef}
-        className="w-full h-auto rounded-lg"
+        className="w-full h-80 rounded-lg"
         src={src}
         // poster="https://res.cloudinary.com/dmmkouxkh/image/upload/v1738936140/DETAILED_SCREE_mxufwn.mp4"
         onClick={togglePlay}

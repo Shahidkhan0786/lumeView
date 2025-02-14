@@ -315,6 +315,33 @@ export default function Navbar() {
                   >
                     Accessories
                   </Link>
+
+                  <div
+                    className="relative group"
+                    onMouseEnter={() => setOpenSubmenu("explore")}
+                    onMouseLeave={() => setOpenSubmenu(null)}
+                  >
+                    <div className="flex justify-between items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      <span>Explore</span>
+                      <ChevronRight size={16} />
+                    </div>
+                    {openSubmenu === "explore" && (
+                      <div className="absolute left-full top-0 w-56 bg-white text-black shadow-lg border rounded-md py-2">
+                        <Link
+                          href="/digital_signage"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          About US
+                        </Link>
+                        <Link
+                          href="/products/xboard-v7/variant2"
+                          className="block px-4 py-2 hover:bg-gray-100"
+                        >
+                          Factory Tour
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
@@ -328,9 +355,32 @@ export default function Navbar() {
             <Link href="/support" className="hover:text-accent">
               Support
             </Link>
-            <Link href="/explore" className="hover:text-accent">
-              Explore
-            </Link>
+            <div
+              className="relative group"
+              onMouseEnter={() => setOpenSubmenu("explore")}
+              onMouseLeave={() => setOpenSubmenu(null)}
+            >
+              <div className="flex justify-between items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <span>Explore</span>
+                <ChevronRight size={16} />
+              </div>
+              {openSubmenu === "explore" && (
+                <div className="absolute left-full top-0 w-56 bg-white text-black shadow-lg border rounded-md py-2">
+                  <Link
+                    href="/about_us"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    About US
+                  </Link>
+                  <Link
+                    href="/factory_tour"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Factory Tour
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Contact Sales Button */}
