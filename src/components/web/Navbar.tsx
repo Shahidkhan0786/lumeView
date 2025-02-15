@@ -189,6 +189,9 @@ export default function Navbar() {
               <Link href="/support" className="hover:text-accent">
                 Support
               </Link>
+              <Link href="/contact_us" className="hover:text-accent">
+                Contact Us
+              </Link>
 
               <button
                 className="flex items-center space-x-1 hover:text-accent"
@@ -284,7 +287,7 @@ export default function Navbar() {
                           Advertising Machine
                         </Link>
                         <Link
-                          href="/products/xboard-v7/variant2"
+                          href="/vertical_advertisement_machine"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
                           Vertical advertising machine
@@ -380,6 +383,9 @@ export default function Navbar() {
             </Link>
             <Link href="/support" className="hover:text-accent">
               Support
+            </Link>
+            <Link href="/contact_us" className="hover:text-accent">
+              Contact Us
             </Link>
             <div
               className="relative group"

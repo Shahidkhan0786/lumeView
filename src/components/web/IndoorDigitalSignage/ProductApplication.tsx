@@ -6,39 +6,40 @@ import { motion } from "framer-motion";
 export default function ProductApplication() {
   const cases = [
     {
-      title: "Retail Display Solutions",
-      description: "High-quality LED and OLED screens for retail environments.",
-      image: "/images/digital_signage/elevator-advertising.png",
+      title: "Mall Guide Digital Signage",
+      description:
+        "Interactive digital displays for mall navigation, store promotions, and customer assistance.",
+      image: "/images/digital_signage/mall-guide.png",
     },
     {
-      title: "Corporate Conference Displays",
+      title: "Medical Promotion Displays",
       description:
-        "Advanced display solutions for conference and corporate spaces.",
-      image: "/images/digital_signage/exhibition-demonstration.png",
+        "High-definition screens for hospitals and clinics, displaying health information and advertisements.",
+      image: "/images/digital_signage/medical-promotion.png",
     },
     {
-      title: "Outdoor Advertising Screens",
+      title: "Film Entertainment Display",
       description:
-        "Durable and high-visibility advertising screens for outdoor use.",
-      image: "/images/digital_signage/catering-industry.png",
+        "Enhancing movie promotions with interactive and engaging digital signage in cinemas and entertainment venues.",
+      image: "/images/digital_signage/film-entertainment.png",
     },
     {
-      title: "Interactive Learning Displays",
+      title: "Restaurant Ordering Kiosks",
       description:
-        "Smart displays for enhanced learning experiences in classrooms.",
-      image: "/images/digital_signage/medical-clinic.png",
+        "Touchscreen self-ordering kiosks to improve customer experience and streamline restaurant operations.",
+      image: "/images/digital_signage/restaurant-ordering.png",
     },
     {
-      title: "Digital Menu Boards",
+      title: "Bank Inquiry Kiosks",
       description:
-        "Dynamic and engaging digital menus for restaurants and cafes.",
-      image: "/images/digital_signage/public-scene.png",
+        "Interactive digital kiosks for banks, enabling self-service transactions and account inquiries.",
+      image: "/images/digital_signage/bank-inquiry.png",
     },
     {
-      title: "Hospitality Display Solutions",
+      title: "Train Ticket Inquiry Terminals",
       description:
-        "High-resolution screens for hotels, lounges, and reception areas.",
-      image: "/images/digital_signage/sales-center.png",
+        "Smart self-service kiosks for checking train schedules, ticket bookings, and travel information.",
+      image: "/images/digital_signage/train-ticket-inquiry.png",
     },
   ];
 

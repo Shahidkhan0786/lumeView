@@ -8,8 +8,43 @@ import {
   FaYoutube,
   FaEnvelope,
 } from "react-icons/fa";
+import { toast } from "react-hot-toast";
+import { useState } from "react";
 
 export default function Footer() {
+  const [form, setForm] = useState({ email: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      const data = await response.json();
+      toast.success(data.message);
+      setForm({ name: "", email: "", message: "" });
+    } catch (error: any) {
+      toast.error("Failed to submit form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <footer
       className="relative  bg-gradient-to-b from-black via-gray-950 to-black text-white py-10 mt-16"
@@ -46,7 +81,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="text-gray-300 space-y-3">
               <li>
-                <Link href="#" className="hover:text-accent">
+                <Link href="/about_us" className="hover:text-accent">
                   About Lumeview
                 </Link>
               </li>
@@ -56,7 +91,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-accent">
+                <Link href="/contact_us" className="hover:text-accent">
                   Contact Us
                 </Link>
               </li>
@@ -93,20 +128,28 @@ export default function Footer() {
           </p>
           <div className="flex flex-col items-center lg:items-end w-full max-w-lg mt-6 lg:mt-0">
             <div className="flex w-full">
-              <input
-                type="email"
-                placeholder="Enter your E-mail Address"
-                className="bg-gray-700 text-white px-4 py-3 rounded-l-md w-full focus:outline-none"
-              />
-              <button className="bg-primary hover:bg-accent text-white px-6 py-3 rounded-r-md font-semibold">
-                SUBMIT
-              </button>
+              <form className="flex" onSubmit={handleSubmit}>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your E-mail Address"
+                  className="bg-gray-700 text-white px-4 py-3 rounded-l-md w-full focus:outline-none"
+                  value={form.email} // Bind value to state
+                  onChange={handleChange}
+                />
+                <button className="bg-primary hover:bg-accent text-white px-6 py-3 rounded-r-md font-semibold">
+                  SUBMIT
+                </button>
+              </form>
             </div>
           </div>
         </div>
 
         <div className="mt-8 text-gray-300 text-center lg:text-left">
-          <p>21076 Bake Parkway, Suite 106, Lake Forest, CA 92630</p>
+          <p>
+            Shanghai, Wanxiang International Innovation Port, Hangdu Road,
+            Pudong New Area, 4F, Building 1
+          </p>
           <p className="mt-2">
             <Link href="#" className="hover:text-white">
               Web Policy

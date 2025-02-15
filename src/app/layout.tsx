@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/web/Navbar";
 import Footer from "@/components/web/Footer";
 import NextTopLoader from "nextjs-toploader";
@@ -49,6 +50,7 @@ export default function RootLayout({
         />
         <Navbar />
         <main>{children}</main>
+        <Toaster position="top-right" />
         <ScrollToTop />
         <Footer />
       </body>
