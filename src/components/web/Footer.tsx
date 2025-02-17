@@ -47,7 +47,7 @@ export default function Footer() {
   };
   return (
     <footer
-      className="relative  bg-gradient-to-b from-black via-gray-950 to-black text-white py-10 mt-16"
+      className="relative  bg-gradient-to-b from-black via-gray-950 to-black text-white py-10 "
       style={{ backgroundImage: "url('/footer.png')" }}
     >
       {/* Overlay for better readability */}
