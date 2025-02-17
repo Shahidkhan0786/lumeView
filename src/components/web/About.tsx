@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import { useRef } from "react";
 import { useEffect, useState } from "react";
 
@@ -56,12 +57,14 @@ export default function About() {
           and a specialized new enterprise, continuously pushing technological
           breakthroughs and delivering exceptional quality.
         </p>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          className="bg-primary hover:bg-accent text-white px-6 py-3 rounded-lg font-semibold transition"
-        >
-          Learn More
-        </motion.button>
+        <Link href="/about_us">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            className="bg-primary hover:bg-accent text-white px-6 py-3 rounded-lg font-semibold transition"
+          >
+            Learn More
+          </motion.button>
+        </Link>
       </motion.div>
 
       <motion.div

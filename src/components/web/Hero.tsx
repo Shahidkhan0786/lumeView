@@ -6,21 +6,63 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
+  // {
+  //   type: "video",
+  //   videoSrc:
+  //     "https://res.cloudinary.com/dwuxbwxdx/video/upload/v1738981753/front_xuagmf.mp4",
+  //   title: "Transform Your Business",
+  //   subtitle:
+  //     "with Cutting-Edge Interactive Displays. Enhance your business environment with our versatile display solutions.",
+  //   link: "/learn-more",
+  // },
   {
-    type: "video",
-    videoSrc:
-      "https://res.cloudinary.com/dwuxbwxdx/video/upload/v1738981753/front_xuagmf.mp4",
-    title: "Transform Your Business",
-    subtitle:
-      "with Cutting-Edge Interactive Displays. Enhance your business environment with our versatile display solutions.",
-    link: "/learn-more",
+    type: "image",
+    image: "/images/hero/hero1.png",
+    title: "Breathtaking Views",
+    subtitle: "Experience the beauty of nature in ultra-high resolution",
+    link: "/nature-view",
   },
   {
     type: "image",
-    image: "/images/lumeview_hero_1.jpg", // Update with actual image path
-    title: "Seamless Collaboration",
-    subtitle: "Experience next-gen video conferencing",
-    link: "/collaboration",
+    image: "/images/hero/hero2.jpg",
+    title: "Immersive Digital Experience",
+    subtitle: "Step into the future with interactive digital displays",
+    link: "/digital-experience",
+  },
+  {
+    type: "image",
+    image: "/images/hero/hero3.jpg",
+    title: "Crystal Clear LED Display",
+    subtitle: "High-definition visuals for an unparalleled experience",
+    link: "/led-display",
+  },
+  {
+    type: "image",
+    image: "/images/hero/hero4.jpg",
+    title: "Next-Gen Data Center",
+    subtitle: "Monitor and manage data like never before",
+    link: "/data-center",
+  },
+  {
+    type: "image",
+    image: "/images/hero/hero5.jpg",
+    title: "Futuristic Control Room",
+    subtitle: "Real-time monitoring and analytics at your fingertips",
+    link: "/control-room",
+  },
+  {
+    type: "image",
+    image: "/images/hero/hero6.jpg",
+    title: "Innovative Broadcasting Studio",
+    subtitle: "Revolutionizing media with advanced technology",
+    link: "/broadcast-studio",
+  },
+  {
+    type: "image",
+    image: "/images/hero/hero7.jpg",
+    title: "Executive Conference Hall",
+    subtitle: "Premium boardroom setup for high-level discussions",
+    link: "/conference-hall",
   },
 ];
 
