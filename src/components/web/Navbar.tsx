@@ -293,7 +293,7 @@ export default function Navbar() {
                           Vertical advertising machine
                         </Link>
                         <Link
-                          href="/products/xboard-v7/variant2"
+                          href="/dual_side_advertisement_machine"
                           className="block px-4 py-2 hover:bg-gray-100"
                         >
                           Dual side advertising

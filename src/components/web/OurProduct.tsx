@@ -11,19 +11,19 @@ const products = [
     name: "INTERACTIVE PANELS",
     description: "High-end interactive flat panels for smart collaboration.",
     image: "/images/interactive-panel.png",
-    link: "/products/xboard-v7",
+    link: "/all_in_one",
   },
   {
     name: "LED DISPLAY",
     description: "Reliable and efficient flat panel displays for enterprises.",
     image: "/images/led-display.png",
-    link: "/products/v6-classic",
+    link: "/smart-tv",
   },
   {
     name: "DIGITAL SIGNING",
     description: "An innovative blackboard with interactive features.",
     image: "/images/digital-signing.png",
-    link: "/products/smart-blackboard",
+    link: "/digital_signage",
   },
   {
     name: "MOBILE SCREENS",

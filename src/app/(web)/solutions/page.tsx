@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function SolutionsPage() {
   return (
@@ -116,9 +117,11 @@ export default function SolutionsPage() {
           Partner with Lumeview for cutting-edge, high-quality LED displays
           tailored for your business needs.
         </p>
-        <Button className="px-6 py-3 bg-white text-blue-700 hover:bg-gray-100 text-lg font-medium rounded-lg">
-          Contact Us
-        </Button>
+        <Link href="/contact_us">
+          <Button className="px-6 py-3 bg-white text-blue-700 hover:bg-gray-100 text-lg font-medium rounded-lg">
+            Contact Us
+          </Button>
+        </Link>
       </section>
     </div>
   );
