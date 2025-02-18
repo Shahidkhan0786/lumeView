@@ -58,7 +58,7 @@ export default function Navbar() {
         <div className="flex space-x-4">
           <a href="tel:+123456789" className="flex items-center space-x-1">
             <Phone size={16} />
-            <span>+86 172 6943 0601</span>
+            <span>+021 54567361</span>
           </a>
         </div>
         <div className="flex space-x-4">
