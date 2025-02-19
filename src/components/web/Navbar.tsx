@@ -416,13 +416,19 @@ export default function Navbar() {
           </div>
 
           {/* Contact Sales Button */}
-          <Button
+          {/* <Button
             variant="default"
             className="hidden md:block bg-primary text-white hover:bg-accent"
-            onClick={handleScrollToContact}
+            // onClick={handleScrollToContact}
           >
             Contact Sales
-          </Button>
+          </Button> */}
+          <Link
+            href="/contact_us"
+            className="hidden md:block bg-primary text-white hover:bg-accent px-2 py-2 rounded-sm"
+          >
+            Contact Sales
+          </Link>
         </div>
       </nav>
     </>

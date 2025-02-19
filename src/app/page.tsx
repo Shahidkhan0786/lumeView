@@ -14,7 +14,7 @@ export default function Home() {
       <About />
       <Cases />
       <WhiteBoardSection />
-      <ContactForm />
+      {/* <ContactForm /> */}
       <ClientReview />
     </div>
   );
