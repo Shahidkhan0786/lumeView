@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import CloudinaryVideo from "@/components/web/CloudinaryVideo";
+import Section from "@/components/web/ImageSection";
 
 export default function FactoryTour() {
   const [isVideoModalOpen, setVideoModalOpen] = useState(false);
@@ -117,6 +119,39 @@ export default function FactoryTour() {
         </div>
       </motion.div>
 
+      {/* Speakerphone（  */}
+      <div className="flex flex-col items-center bg-white pt-8">
+        {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+          <span className="relative inline-block p-2">
+            Our Factory
+            <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+          </span>
+        </h2> */}
+
+        <Section
+          title="🏭 Precision in Every Pixel | Inside Our LED Manufacturing Facility"
+          text="Explore our state-of-the-art factory, where cutting-edge automation meets expert craftsmanship to produce high-performance LED display solutions. From optical module assembly to meticulous quality control, our facility ensures unmatched precision and reliability in every product."
+          imageSrc="https://res.cloudinary.com/dwuxbwxdx/image/upload/v1739980887/factory4_qrv8fi.jpg"
+          bgColor="bg-primary-light"
+          reverse={false}
+        />
+        <Section
+          title="⚙️ Innovating the Future of LED Displays | Factory Tour"
+          text="Step inside our high-tech production facility, where advanced automation, strict quality assurance, and skilled engineers come together to create next-gen LED solutions. Our streamlined processes guarantee high efficiency, superior quality, and groundbreaking innovation in display technology."
+          imageSrc="https://res.cloudinary.com/dwuxbwxdx/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1739980888/factory5_ul7pxv.jpg"
+          bgColor="bg-primary-light"
+          reverse={true}
+        />
+
+        <Section
+          title="🚀 Behind the Scenes | How We Build Industry-Leading LED Displays"
+          text="Go beyond the final product and witness our commitment to excellence in LED manufacturing. Our factory houses an automated optical module production line, precision engineering workstations, and a high-tech cleanroom environment—ensuring every LED display meets the highest standards of performance and durability."
+          imageSrc="https://res.cloudinary.com/dwuxbwxdx/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1739980889/factory6_npphdt.jpg"
+          bgColor="bg-primary-light"
+          reverse={false}
+        />
+      </div>
+
       {/* Gallery Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -195,6 +230,11 @@ export default function FactoryTour() {
           </motion.form>
         </div>
       </motion.div>
+
+      <main className="flex flex-col items-center justify-center  text-white p-4">
+        {/* <h1 className="text-3xl font-bold mb-6">Welcome to Our Platform</h1> */}
+        <CloudinaryVideo src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1739980822/factory_tour1_mndmvf.mp4" />
+      </main>
     </div>
   );
 }

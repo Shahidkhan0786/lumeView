@@ -168,6 +168,20 @@ export default function SolutionsPage() {
           bgColor="bg-secondary-light"
           reverse={false}
         />
+        <VideoSection
+          title="Smart Healthcare Integration | Technology that Protects Health"
+          text="Discover how cutting-edge technology is transforming healthcare! Our intelligent medical solutions ensure efficiency, safety, and real-time data integration. With advanced AI-driven health monitoring and interactive digital systems, we are shaping the future of smart hospitals. 🚀"
+          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1739982975/solution4_babyf0.mp4"
+          bgColor="bg-secondary-light"
+          reverse={true}
+        />
+        <VideoSection
+          title="The Future of Healthcare | Digital Hospital Solutions"
+          text="Step into the world of next-gen digital hospitals! 🏥 Our interactive self-service kiosks and high-tech medical systems are designed to enhance patient experience, improve efficiency, and streamline hospital operations. See how our smart technology is revolutionizing healthcare today! 🌍✨"
+          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1739982970/solution5_bhk34u.mp4"
+          bgColor="bg-secondary-light"
+          reverse={false}
+        />
       </div>
 
       {/* Call to Action */}
