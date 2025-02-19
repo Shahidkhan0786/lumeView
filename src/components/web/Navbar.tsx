@@ -97,7 +97,7 @@ export default function Navbar() {
           </button>
 
           {/* Mobile Menu */}
-          {isMobileMenuOpen && (
+          {/* {isMobileMenuOpen && (
             <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t md:hidden flex flex-col items-center space-y-4 py-4 z-50">
               <button
                 className="flex items-center space-x-1 hover:text-accent"
@@ -221,8 +221,155 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-          )}
+          )} */}
 
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t md:hidden flex flex-col items-center space-y-4 py-4 z-50">
+              {/* Products Dropdown */}
+              <button
+                className="flex items-center justify-center w-full px-4 py-2 hover:text-accent"
+                onClick={() => setIsMobileSubmenuOpen(!isMobileSubmenuOpen)}
+              >
+                <span>Products</span>
+                {isMobileSubmenuOpen ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
+              </button>
+
+              {isMobileSubmenuOpen && (
+                <div className="w-full bg-gray-50 shadow-md flex flex-col items-center py-4">
+                  {/* Intelligent Panel */}
+                  <button
+                    className="flex items-center justify-center w-full px-4 py-2 hover:text-accent"
+                    onClick={() =>
+                      setIsMobileSubSubmenuOpen(!isMobileSubSubmenuOpen)
+                    }
+                  >
+                    <span>Intelligent Panel</span>
+                    {isMobileSubSubmenuOpen ? (
+                      <ChevronDown size={16} />
+                    ) : (
+                      <ChevronRight size={16} />
+                    )}
+                  </button>
+
+                  {isMobileSubSubmenuOpen && (
+                    <div className="w-full bg-gray-100 shadow-md flex flex-col items-center py-4">
+                      <Link
+                        href="/all_in_one"
+                        className="hover:text-accent py-2 w-full text-center"
+                        onClick={closeMenu}
+                      >
+                        All In One
+                      </Link>
+                      <Link
+                        href="/all_in_one_se"
+                        className="hover:text-accent py-2 w-full text-center"
+                        onClick={closeMenu}
+                      >
+                        All In One SE
+                      </Link>
+                      <Link
+                        href="/led_all_in_one"
+                        className="hover:text-accent py-2 w-full text-center"
+                        onClick={closeMenu}
+                      >
+                        LED All In One
+                      </Link>
+                    </div>
+                  )}
+
+                  <Link
+                    href="/digital_signage"
+                    className="hover:text-accent py-2 w-full text-center"
+                    onClick={closeMenu}
+                  >
+                    Digital Signage
+                  </Link>
+                  <Link
+                    href="/digital-frame"
+                    className="hover:text-accent py-2 w-full text-center"
+                    onClick={closeMenu}
+                  >
+                    Digital Frame
+                  </Link>
+                  <Link
+                    href="/smart-tv"
+                    className="hover:text-accent py-2 w-full text-center"
+                    onClick={closeMenu}
+                  >
+                    Smart TV
+                  </Link>
+                </div>
+              )}
+
+              <Link
+                href="/solutions"
+                className="hover:text-accent py-2 w-full text-center"
+                onClick={closeMenu}
+              >
+                Solutions
+              </Link>
+              <Link
+                href="/partners"
+                className="hover:text-accent py-2 w-full text-center"
+                onClick={closeMenu}
+              >
+                Partners
+              </Link>
+              <Link
+                href="/support"
+                className="hover:text-accent py-2 w-full text-center"
+                onClick={closeMenu}
+              >
+                Support
+              </Link>
+              <Link
+                href="/contact_us"
+                className="hover:text-accent py-2 w-full text-center"
+                onClick={closeMenu}
+              >
+                Contact Us
+              </Link>
+
+              {/* Explore Dropdown */}
+              <button
+                className="flex items-center justify-center w-full px-4 py-2 hover:text-accent"
+                onClick={() =>
+                  setIsMobileExploreMenuOpen(!isMobileExploreMenuOpen)
+                }
+              >
+                <span>Explore</span>
+                {isMobileExploreMenuOpen ? (
+                  <ChevronDown size={16} />
+                ) : (
+                  <ChevronRight size={16} />
+                )}
+              </button>
+
+              {isMobileExploreMenuOpen && (
+                <div className="w-full bg-gray-50 shadow-md flex flex-col items-center py-4">
+                  <Link
+                    href="/about_us"
+                    className="hover:text-accent py-2 w-full text-center"
+                    onClick={closeMenu}
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/factory_tour"
+                    className="hover:text-accent py-2 w-full text-center"
+                    onClick={closeMenu}
+                  >
+                    Factory Tour
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center mx-auto">
             <div
@@ -234,6 +381,7 @@ export default function Navbar() {
                 <span>Products</span>
                 <ChevronDown size={16} />
               </button>
+
               {isProductsOpen && (
                 <div className="absolute left-0 mt-2 w-56 bg-white text-black shadow-lg border rounded-md py-2">
                   <div
@@ -344,33 +492,6 @@ export default function Navbar() {
                   >
                     Accessories
                   </Link>
-
-                  <div
-                    className="relative group"
-                    onMouseEnter={() => setOpenSubmenu("explore")}
-                    onMouseLeave={() => setOpenSubmenu(null)}
-                  >
-                    <div className="flex justify-between items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                      <span>Explore</span>
-                      <ChevronRight size={16} />
-                    </div>
-                    {openSubmenu === "explore" && (
-                      <div className="absolute left-full top-0 w-56 bg-white text-black shadow-lg border rounded-md py-2">
-                        <Link
-                          href="/digital_signage"
-                          className="block px-4 py-2 hover:bg-gray-100"
-                        >
-                          About US
-                        </Link>
-                        <Link
-                          href="/products/xboard-v7/variant2"
-                          className="block px-4 py-2 hover:bg-gray-100"
-                        >
-                          Factory Tour
-                        </Link>
-                      </div>
-                    )}
-                  </div>
                 </div>
               )}
             </div>

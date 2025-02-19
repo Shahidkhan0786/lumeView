@@ -45,7 +45,7 @@ export default function SolutionsPage() {
         >
           About LUMEVIEW SMART BUSINESS DISPLAY SHANGHAI CO. LTD.
         </motion.h2>
-        <p className="text-lg text-gray-600 text-center max-w-5xl mx-auto">
+        <p className="text-lg text-gray-600 text-justify max-w-5xl mx-auto">
           LUMEVIEW has been a pioneer in the LED industry for about fifteen
           years, offering a comprehensive range of services from multimedia
           hardware manufacturing to content production and event execution.
