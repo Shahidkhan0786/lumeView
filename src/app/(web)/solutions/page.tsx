@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Section from "@/components/web/ImageSection";
+import VideoSection from "@/components/web/VedioSection";
 
 export default function SolutionsPage() {
   return (
@@ -33,8 +35,36 @@ export default function SolutionsPage() {
         </motion.div>
       </section>
 
-      {/* Solutions Overview Section */}
+      {/* Company Overview Section */}
       <section className="max-w-6xl mx-auto px-6 py-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-3xl font-bold text-center mb-6"
+        >
+          About LUMEVIEW SMART BUSINESS DISPLAY SHANGHAI CO. LTD.
+        </motion.h2>
+        <p className="text-lg text-gray-600 text-center max-w-5xl mx-auto">
+          LUMEVIEW has been a pioneer in the LED industry for about fifteen
+          years, offering a comprehensive range of services from multimedia
+          hardware manufacturing to content production and event execution.
+          Specializing in multimedia solutions for cultural industries, media,
+          tourism, government, healthcare, real estate, and educational sectors,
+          we handle performances, concerts, music festivals, and large-scale
+          events simultaneously with a highly professional team.
+        </p>
+        <p className="text-lg text-gray-600 text-center max-w-5xl mx-auto mt-4">
+          Our exhibition hall’s curved LED display adopts a high-grade LED-P1.86
+          flexible module, ensuring high refresh rate and grayscale for
+          lifelike, vibrant visuals. The integration of servo motors and precise
+          mechanical structures provides an immersive and flawless viewing
+          experience.
+        </p>
+      </section>
+
+      {/* Solutions Overview Section */}
+      <section className="bg-gray-100 py-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -107,6 +137,38 @@ export default function SolutionsPage() {
           </div>
         </div>
       </section>
+
+      {/* Speakerphone（  */}
+      <div className="flex flex-col items-center bg-white pt-8">
+        {/* <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+          <span className="relative inline-block p-2">
+            Speakerphone
+            <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+          </span>
+        </h2> */}
+
+        <VideoSection
+          title="🚀 Next-Gen LED Display Solutions | Lumeview Innovations"
+          text="Experience cutting-edge LED technology with Lumeview Smart Business Display Shanghai Co. Ltd. From immersive curved screens to high-resolution displays, we redefine digital experiences for retail, corporate, events, and more. Watch how our innovative solutions bring visuals to life with superior clarity and dynamic impact."
+          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1739979785/solution1_xqg58o.mp4"
+          bgColor="bg-primary-light"
+          reverse={false}
+        />
+        <VideoSection
+          title="✨ Revolutionizing Visual Experiences | Lumeview LED Displays"
+          text="Step into the future of LED display technology with Lumeview Smart Business Display Shanghai Co. Ltd. Our high-resolution, dynamic, and immersive LED solutions power events, corporate spaces, and digital signage worldwide. Watch as we transform ordinary displays into extraordinary visual experiences!."
+          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1739979785/solution2_y3u0fe.mp4"
+          bgColor="bg-secondary-light"
+          reverse={true}
+        />
+        <VideoSection
+          title="🌟 Transforming Spaces with LED Innovation | Lumeview Displays"
+          text="Discover the power of Lumeview’s cutting-edge LED technology, designed to elevate digital experiences across industries. From high-definition display walls to interactive event screens, our solutions bring unmatched clarity, flexibility, and immersive visuals to any environment. Watch how innovation meets excellence!."
+          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1739979788/solution3_abtrmo.mp4"
+          bgColor="bg-secondary-light"
+          reverse={false}
+        />
+      </div>
 
       {/* Call to Action */}
       <section className="bg-blue-500 text-center py-16 px-6 text-white">
