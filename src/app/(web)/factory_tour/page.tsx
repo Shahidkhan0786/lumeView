@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import CloudinaryVideo from "@/components/web/CloudinaryVideo";
 import Section from "@/components/web/ImageSection";
+import VideoSection from "@/components/web/VedioSection";
 
 export default function FactoryTour() {
   const [isVideoModalOpen, setVideoModalOpen] = useState(false);
@@ -148,6 +149,21 @@ export default function FactoryTour() {
           text="Go beyond the final product and witness our commitment to excellence in LED manufacturing. Our factory houses an automated optical module production line, precision engineering workstations, and a high-tech cleanroom environment—ensuring every LED display meets the highest standards of performance and durability."
           imageSrc="https://res.cloudinary.com/dwuxbwxdx/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1739980889/factory6_npphdt.jpg"
           bgColor="bg-primary-light"
+          reverse={false}
+        />
+
+        <VideoSection
+          title="🏭 Behind the Scenes | Discover Our High-Tech LED Manufacturing Process"
+          text="Take an exclusive tour inside our cutting-edge LED manufacturing facility! Witness how advanced automation, skilled craftsmanship, and rigorous quality checks come together to produce world-class LED display solutions. From assembling optical modules to final product testing, every step is designed to ensure precision, durability, and brilliance."
+          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1740287556/factory-tourx_txpfry.mp4"
+          bgColor="bg-primary-light"
+          reverse={true}
+        />
+        <VideoSection
+          title="🏭 Inside Our Factory | Where Innovation Meets Precision"
+          text="Step inside our state-of-the-art manufacturing facility and experience the journey of how high-performance LED display solutions are crafted. From advanced automation to meticulous quality checks, every stage of production reflects our commitment to excellence, innovation, and reliability. Witness the fusion of technology and expert craftsmanship that ensures superior products for our clients worldwide."
+          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1740288279/factory-tourx1_b4rljp.mp4"
+          bgColor="bg-secondary-light"
           reverse={false}
         />
       </div>

@@ -469,7 +469,7 @@ export default function Navbar() {
                     Smart TV
                   </Link>
                   <Link
-                    href="/products/smart-blackboard"
+                    href="/led-tv"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
                     LED Display

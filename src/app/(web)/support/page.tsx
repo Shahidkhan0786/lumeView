@@ -160,7 +160,7 @@ export default function SupportPage() {
               <div className="flex items-center gap-3 bg-green-100 dark:bg-green-900 p-4 rounded-lg">
                 <FaEnvelope className="text-green-500 text-xl" />
                 <span className="text-lg font-medium">
-                  Hamza.az@lumeview.com
+                  lumeview.china@lumeview.com
                 </span>
               </div>
             </div>
@@ -274,7 +274,7 @@ export default function SupportPage() {
         <p className="text-lg mb-6">
           For assistance, contact us anytime during support hours.
         </p>
-        <Link href="mailto:Hamza.az@lumeview.com">
+        <Link href="mailto:lumeview.china@lumeview.com">
           <Button className="px-6 py-3 bg-white text-blue-700 hover:bg-gray-100 text-lg font-medium rounded-lg">
             Contact Support
           </Button>

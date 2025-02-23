@@ -182,6 +182,13 @@ export default function SolutionsPage() {
           bgColor="bg-secondary-light"
           reverse={false}
         />
+        <VideoSection
+          title="💡 Innovative LED Display Solutions Tailored for Your Business"
+          text="Discover how our advanced LED display solutions are designed to meet diverse business needs with unmatched quality and reliability. From precision manufacturing to cutting-edge technology, our solutions offer vibrant visuals, energy efficiency, and long-lasting performance. Whether for indoor, outdoor, or specialized applications, we provide tailored solutions that deliver maximum impact and value."
+          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1740288055/solutionx_cjczeg.mp4"
+          bgColor="bg-secondary-light"
+          reverse={true}
+        />
       </div>
 
       {/* Call to Action */}
