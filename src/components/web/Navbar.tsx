@@ -486,12 +486,12 @@ export default function Navbar() {
                   >
                     Mobile Screen
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/products/smart-blackboard"
                     className="block px-4 py-2 hover:bg-gray-100"
                   >
                     Accessories
-                  </Link>
+                  </Link> */}
                 </div>
               )}
             </div>
