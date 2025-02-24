@@ -25,12 +25,12 @@ const products = [
     image: "/images/digital-signing.png",
     link: "/digital_signage",
   },
-  {
-    name: "MOBILE SCREENS",
-    description: "Cost-effective digital displays with excellent performance.",
-    image: "/images/mobile-accessories.png",
-    link: "/products/e2-series",
-  },
+  // {
+  //   name: "MOBILE SCREENS",
+  //   description: "Cost-effective digital displays with excellent performance.",
+  //   image: "/images/mobile-accessories.png",
+  //   link: "/products/e2-series",
+  // },
 ];
 
 export default function OurProducts() {
