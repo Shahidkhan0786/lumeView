@@ -31,6 +31,12 @@ const products = [
   //   image: "/images/mobile-accessories.png",
   //   link: "/products/e2-series",
   // },
+  {
+    name: "Digital Frame",
+    description: "Frame Smart Wall-mounted Advertising Display .",
+    image: "/images/led-display (2).png",
+    link: "/digital-frame",
+  },
 ];
 
 export default function OurProducts() {
