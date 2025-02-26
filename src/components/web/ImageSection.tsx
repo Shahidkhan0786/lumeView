@@ -5,7 +5,14 @@ import { motion } from "framer-motion";
 
 import Link from "next/link";
 
-export default function Section({ title, text, imageSrc, bgColor, reverse }) {
+export default function Section({
+  title,
+  text,
+  points,
+  imageSrc,
+  bgColor,
+  reverse,
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -16,6 +23,7 @@ export default function Section({ title, text, imageSrc, bgColor, reverse }) {
         reverse ? "md:flex-row-reverse" : ""
       } relative overflow-hidden`}
     >
+      {/* Text & Points Section */}
       <motion.div
         initial={{ opacity: 0, x: reverse ? 100 : -100 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -23,8 +31,20 @@ export default function Section({ title, text, imageSrc, bgColor, reverse }) {
         viewport={{ once: false, amount: 0.3 }}
         className="md:w-1/2 p-4 relative z-10"
       >
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
-        <p className="text-lg">{text}</p>
+        <h3 className="text-2xl font-bold mb-4">{title}</h3>
+
+        {/* Conditionally Render Text or Points */}
+        {text && <p className="text-lg">{text}</p>}
+
+        {points && (
+          <ul className="text-lg list-disc list-inside space-y-2">
+            {points.map((point, index) => (
+              <li key={index} className="flex items-center">
+                ✅ {point}
+              </li>
+            ))}
+          </ul>
+        )}
       </motion.div>
 
       <motion.div

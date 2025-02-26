@@ -3,8 +3,66 @@ import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import CloudinaryVideo from "@/components/web/CloudinaryVideo";
-
+import WorldMapSection from "@/components/web/WorldMapSection";
+// import Section from "@/components/web/ImageSection";
+import Section from "@/components/web/ImageSection";
+import AdvancedTechnology from "@/components/web/AdvancedTechnology";
 export default function AboutUs() {
+  const milestones = [
+    {
+      year: "2008",
+      text: "Shenzhen Lumeview officially enters the LED display manufacturing industry.",
+    },
+    {
+      year: "2011",
+      text: "Establishment of LUMEVIEW SMART BUSINESS DISPLAY SHANGHAI CO., LTD.",
+    },
+    {
+      year: "2012",
+      text: "LUMEVIEW LED display screen successfully passes 3C certification and obtains CE/FCC/ROHS certification.",
+    },
+    {
+      year: "2013",
+      text: "Obtained national high-tech certification and multiple product patents.",
+    },
+    {
+      year: "2014",
+      text: "Awarded '3.15 Integrity Member Unit' and established offices in Hefei, Beijing, Xi’an, and Chengdu.",
+    },
+    {
+      year: "2015",
+      text: "Recognized as '3.15 Integrity System Trusted Unit' and recommended for Chinese Engineering Construction.",
+    },
+    {
+      year: "2016",
+      text: "Rated as an innovative benchmark enterprise in Yangtze River Delta.",
+    },
+    {
+      year: "2017",
+      text: "Established Lumeview Culture Media to enter the entertainment industry.",
+    },
+    {
+      year: "2018",
+      text: "Became a first-tier engineering supplier of Liad Group in Shanghai.",
+    },
+    {
+      year: "2019",
+      text: "Acquired R&D company 'Shanghai Chujie Intelligent Technology Co., Ltd.'",
+    },
+  ];
+
+  const certificates = [
+    "/images/certificates/cert1.png",
+    "/images/certificates/cert2.png",
+    "/images/certificates/cert3.png",
+    "/images/certificates/cert4.png",
+    "/images/certificates/cert5.png",
+    "/images/certificates/cert6.png",
+    "/images/certificates/cert7.png",
+    "/images/certificates/cert8.png",
+    "/images/certificates/cert9.png",
+    "/images/certificates/cert10.png",
+  ];
   return (
     <div className="bg-white text-gray-800 mt-24">
       {/* Hero Section with Background Image & Dark Overlay */}
@@ -41,7 +99,6 @@ export default function AboutUs() {
           </motion.div>
         </motion.div>
       </section>
-
       {/* About Section */}
       <section className="max-w-6xl mx-auto px-6 py-16">
         <motion.h2
@@ -52,13 +109,40 @@ export default function AboutUs() {
         >
           Who We Are
         </motion.h2>
-        <p className="text-lg text-gray-600 text-center max-w-4xl mx-auto">
-          Lumeview is a high-tech enterprise specializing in{" "}
+        <p className="text-lg text-gray-600 text-center max-w-4xl mx-auto text-justify">
+          {/* Lumeview is a high-tech enterprise specializing in{" "}
           <strong>cutting-edge LED display technology</strong>, offering
-          innovative and high-quality solutions worldwide.
+          innovative and high-quality solutions worldwide. */}
+          LUMEVIEW SMART BUSINESS DISPLAY SHANGHAI CO., LTD is a high-tech
+          enterprise specializing in the research and development, production,
+          manufacturing, sales, installation and commissioning, and service of
+          LED display screens and customized products. Provide high-quality and
+          specialized LED display screens, customized LED products, LED LCD
+          splicing screens and other product technical services. Lumeview
+          Optoelectronics adheres to the core values of "integrity, innovation,
+          cooperation, and winwin", which runs through the entire production and
+          sales process. Create high-quality products with sincerity and achieve
+          win-win cooperation. Lumeview takes the interests of its customers as
+          its responsibility, strictly adhering to the highest industry
+          standards from senior management to frontline employees.
+          Simultaneously emphasizing efficiency management, taking "care" as the
+          lifeblood of the enterprise, and supporting the long-term strategic
+          development of Lumeview. Shanghai Lumeview has continuously introduced
+          international advanced technology, equipment, and production lines in
+          its development process. With the help of external forces and active
+          investment in scientific research, we now have a team of domestic and
+          foreign experts in scientific research, and have won multiple LED new
+          patent technologies, which have been put into application. In
+          addition, Lumeview Optoelectronics has taken the lead in obtaining
+          national quality management system and environmental management system
+          certifications, and has passed certifications such as 3C, CE, FCC,
+          ROHS, etc., gaining widespread recognition in the industry and market.
+          Lumeview always adheres to using technology to drive products,
+          supporting solutions with products, and is committed to providing the
+          best products and services that meet market demand. Lumeview is
+          extraordinary, we have been working hard.
         </p>
       </section>
-
       {/* Why Choose Us Section */}
       <section className="bg-blue-50 py-16">
         <div className="max-w-6xl mx-auto px-6">
@@ -90,7 +174,92 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+      <Section
+        title="⚙️ 3 +1 LUMEVIEW Nuclear Power"
+        points={[
+          "Innovative Thinking: Innovation is the soul of a company and the most powerful weapon for companies to take the initiative in market competition. We focus on continuous innovation to meet global market demands.",
+          "Product Thinking: Products are the hard power of brand development and serve as a living advertisement of brand communication. We ensure strict quality assurance and market-driven solutions.",
+          "Service Thinking: Service is the emotional connection with customers. We prioritize user needs, after-sales solutions, and continuous improvement for maximum customer satisfaction.",
+          "Word of Mouth Marketing: We value the power of word-of-mouth marketing, ensuring product and service quality that encourages positive sharing and brand loyalty.",
+        ]}
+        imageSrc="/images/about_us/competence.png"
+        bgColor="bg-primary-light"
+        reverse={false}
+      />
+      {/* Advanced Technology Section */}
+      <AdvancedTechnology />
 
+      <div className="bg-gray-50 py-12">
+        {/* Section Title */}
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          🏆 History & Honor
+          <span className="block text-sm text-gray-600">
+            Looking back on achievements and innovations
+          </span>
+        </motion.h2>
+
+        {/* Timeline */}
+        <div className="relative max-w-6xl mx-auto">
+          <div className="border-l-4 border-blue-500 absolute h-full left-6 md:left-1/2 transform -translate-x-1/2"></div>
+          <div className="space-y-8">
+            {milestones.map((item, index) => (
+              <motion.div
+                key={index}
+                className="relative flex items-center md:flex-row flex-col"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-lg font-bold absolute left-0 md:left-1/2 transform -translate-x-1/2">
+                  {item.year}
+                </div>
+                <div className="bg-white shadow-md p-6 rounded-lg w-full md:w-1/2 ml-auto">
+                  <p className="text-gray-700 p-2">{item.text}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Certificate Gallery */}
+        {/* <motion.div
+          className="max-w-6xl mx-auto mt-12"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-2xl font-semibold text-center text-gray-800">
+            🏅 Certifications & Awards
+          </h3>
+          <p className="text-gray-600 text-center mb-6">
+            Sowing trust, continuous innovation
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {certificates.map((src, index) => (
+              <motion.div
+                key={index}
+                className="bg-white shadow-md rounded-lg overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src={src}
+                  alt={`Certificate ${index + 1}`}
+                  className="w-full h-40 object-cover"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div> */}
+      </div>
+      <WorldMapSection />
       {/* Our Core Values */}
       <section className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="text-3xl font-bold text-center mb-6 text-gray-900">
@@ -115,7 +284,6 @@ export default function AboutUs() {
           ))}
         </div>
       </section>
-
       {/* Call to Action */}
       <section className="bg-primary text-center py-16 px-6 text-white">
         <h2 className="text-3xl font-bold mb-4">
@@ -129,7 +297,6 @@ export default function AboutUs() {
           Contact Us
         </Button>
       </section>
-
       {/* Video Section */}
       <main className="flex flex-col items-center justify-center text-white p-4">
         <CloudinaryVideo src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1739499936/WeChat_20240826143207_qbnppa.mp4" />
