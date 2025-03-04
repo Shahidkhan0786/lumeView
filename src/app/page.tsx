@@ -3,6 +3,7 @@ import Cases from "@/components/web/Cases";
 import ClientReview from "@/components/web/ClientReview";
 // import ContactForm from "@/components/web/Contact";
 import HeroSlider from "@/components/web/Hero";
+import HistoryHonor from "@/components/web/History";
 import OurProducts from "@/components/web/OurProduct";
 // import ProjectScroll from "@/components/web/Projects";
 import WhiteBoardSection from "@/components/web/WhiteBoard";
@@ -15,6 +16,7 @@ export default function Home() {
       <OurProducts />
       <About />
       <Cases />
+      <HistoryHonor />
       <WorldMapSection />
 
       <WhiteBoardSection />

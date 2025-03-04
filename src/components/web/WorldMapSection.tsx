@@ -29,7 +29,7 @@ const WorldMapSection = () => {
             src="/images/WorldMap.png" // Replace with the correct path
             alt="Global Reach"
             width={1400} // Set appropriate width
-            height={750} // Set appropriate height
+            height={800} // Set appropriate height
             layout="responsive" // Makes it fully responsive
             objectFit="cover" // Ensures it covers the container
             priority // Loads it faster
