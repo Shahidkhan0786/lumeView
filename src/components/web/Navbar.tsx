@@ -314,6 +314,13 @@ export default function Navbar() {
                 Solutions
               </Link>
               <Link
+                href="/led-tv"
+                className="hover:text-accent py-2 w-full text-center"
+                onClick={closeMenu}
+              >
+                LED Display
+              </Link>
+              <Link
                 href="/partners"
                 className="hover:text-accent py-2 w-full text-center"
                 onClick={closeMenu}

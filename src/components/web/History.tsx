@@ -44,21 +44,8 @@ const HistoryHonor = () => {
     },
   ];
 
-  const certificates = [
-    "/images/certificates/cert1.png",
-    "/images/certificates/cert2.png",
-    "/images/certificates/cert3.png",
-    "/images/certificates/cert4.png",
-    "/images/certificates/cert5.png",
-    "/images/certificates/cert6.png",
-    "/images/certificates/cert7.png",
-    "/images/certificates/cert8.png",
-    "/images/certificates/cert9.png",
-    "/images/certificates/cert10.png",
-  ];
-
   return (
-    <div className="bg-gray-50 py-12">
+    <div className="bg-gray-50 py-12 w-screen overflow-hidden">
       {/* Section Title */}
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800"
@@ -73,8 +60,8 @@ const HistoryHonor = () => {
       </motion.h2>
 
       {/* Timeline */}
-      <div className="relative max-w-6xl mx-auto">
-        <div className="border-l-4 border-blue-500 absolute h-full left-6 md:left-1/2 transform -translate-x-1/2"></div>
+      <div className="relative max-w-[90%] md:max-w-6xl mx-auto overflow-hidden">
+        <div className="border-l-4 border-blue-500 absolute h-full left-4 md:left-1/2 transform -translate-x-1/2"></div>
         <div className="space-y-8">
           {milestones.map((item, index) => (
             <motion.div
@@ -85,7 +72,7 @@ const HistoryHonor = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-lg font-bold absolute left-0 md:left-1/2 transform -translate-x-1/2">
+              <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-lg font-bold absolute left-4 md:left-1/2 transform -translate-x-1/2">
                 {item.year}
               </div>
               <div className="bg-white shadow-md p-6 rounded-lg w-full md:w-1/2 ml-auto">
@@ -95,38 +82,6 @@ const HistoryHonor = () => {
           ))}
         </div>
       </div>
-
-      {/* Certificate Gallery */}
-      {/* <motion.div
-          className="max-w-6xl mx-auto mt-12"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold text-center text-gray-800">
-            🏅 Certifications & Awards
-          </h3>
-          <p className="text-gray-600 text-center mb-6">
-            Sowing trust, continuous innovation
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {certificates.map((src, index) => (
-              <motion.div
-                key={index}
-                className="bg-white shadow-md rounded-lg overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <img
-                  src={src}
-                  alt={`Certificate ${index + 1}`}
-                  className="w-full h-40 object-cover"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
     </div>
   );
 };
