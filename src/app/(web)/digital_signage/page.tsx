@@ -223,7 +223,7 @@ export default function HeroSection() {
 
         {/* Sections */}
         <div className="mt-20 w-full">
-          <section id="overview" className="min-h-screen p-10 bg-white">
+          <section id="overview" className="p-10 bg-white">
             <h2 className="text-3xl font-bold">Overview</h2>
             <p className="text-lg mt-4">
               Reassured IPS anti-explosive screen with A+ panel technology.
