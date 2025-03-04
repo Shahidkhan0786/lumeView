@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -77,28 +76,59 @@ const slides = [
 export default function HeroSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef(null);
-  const intervalRef = useRef(null);
+  const videoEndHandlerRef = useRef(() => {}); // مستحکم ریفرنس کے لیے
 
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
-    );
+  useEffect(() => {
+    videoEndHandlerRef.current = () => nextSlide(); // ہینڈلر کو اپڈیٹ کریں
   }, []);
 
   useEffect(() => {
-    intervalRef.current = setInterval(nextSlide, 5000);
-    return () => clearInterval(intervalRef.current);
-  }, [nextSlide]);
+    let interval: NodeJS.Timeout | null = null;
+    const currentSlide = slides[currentIndex];
+
+    if (currentSlide.type === "video" && videoRef.current) {
+      const video = videoRef.current;
+
+      // پہلے ایونٹ لسٹنر شامل کریں
+      video.addEventListener("ended", videoEndHandlerRef.current);
+
+      // ویڈیو کو ری سیٹ اور پلے کریں
+      video.currentTime = 0;
+      const playPromise = video.play().catch((error) => {
+        console.error("Video play failed:", error);
+        interval = setTimeout(nextSlide, 5000);
+      });
+    } else {
+      interval = setInterval(nextSlide, 5000);
+    }
+
+    return () => {
+      if (interval) clearInterval(interval);
+      if (videoRef.current) {
+        videoRef.current.removeEventListener(
+          "ended",
+          videoEndHandlerRef.current
+        );
+      }
+    };
+  }, [currentIndex]);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
+    );
+  };
 
   return (
     <div className="relative w-full h-screen text-white flex items-center justify-center overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
-          key={currentIndex}
+          // key={currentIndex}
+          key={`${currentIndex}-${Date.now()}`} // ہر بار یونیک کیز
           className="absolute inset-0 w-full h-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -113,15 +143,13 @@ export default function HeroSlider() {
               autoPlay
               muted
               playsInline
+              // key={`video-${currentIndex}`} // Unique key for video
+              key={`video-${currentIndex}-${Date.now()}`} // یونیک کیز
             />
           ) : (
-            <Image
-              src={slides[currentIndex].image}
-              alt={slides[currentIndex].title}
-              layout="fill"
-              objectFit="cover"
-              priority={currentIndex === 0} // Load the first image with priority
-              quality={90} // Optimize quality for better performance
+            <div
+              className="absolute inset-0 w-full h-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${slides[currentIndex].image})` }}
             />
           )}
         </motion.div>
