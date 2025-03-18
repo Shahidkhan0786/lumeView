@@ -299,7 +299,7 @@ export default function AboutUs() {
       </section>
       {/* Video Section */}
       <main className="flex flex-col items-center justify-center text-white p-4">
-        <CloudinaryVideo src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1740552476/about_uss_epyfk8.mp4" />
+        <CloudinaryVideo src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1742260720/about_us_last_o1olso.mp4" />
       </main>
     </div>
   );
