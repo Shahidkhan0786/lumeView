@@ -5,46 +5,54 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
-const reviews = [
+const operated_countries_list = [
   {
     name: "Pakistan",
-    review: "STARTECH BUSINESS",
-    avatar: "/images/reviews/alice.png",
+    description: "STARTECH BUSINESS",
+    avatar:
+      "https://res.cloudinary.com/dwuxbwxdx/image/upload/v1742261257/Flag_of_Pakistan_be2xyo.png",
   },
   {
     name: "NIGERIA",
-    review: "INSPIRED GLOBAL MEDIA ",
-    avatar: "/images/reviews/alice.png",
+    description: "INSPIRED GLOBAL MEDIA ",
+    avatar:
+      "https://res.cloudinary.com/dwuxbwxdx/image/upload/v1742261257/Flag_of_Nigeria_fnrubb.png",
   },
   {
     name: "Saudia Arabia ",
-    review: "The Elite ",
-    avatar: "/images/reviews/alice.png",
+    description: "The Elite ",
+    avatar:
+      "https://res.cloudinary.com/dwuxbwxdx/image/upload/v1742261257/Flag_of_Saudi_Arabia.svg_onwqwz.png",
   },
   {
     name: "CANADA",
-    review: "10323349 CANADA INC",
-    avatar: "/images/reviews/alice.png",
+    description: "10323349 CANADA INC",
+    avatar:
+      "https://res.cloudinary.com/dwuxbwxdx/image/upload/v1742261257/Flag_of_Canada_pfjioi.png",
   },
   {
     name: "Bangladesh",
-    review: "Osmo Corporation",
-    avatar: "/images/reviews/alice.png",
+    description: "Osmo Corporation",
+    avatar:
+      "https://res.cloudinary.com/dwuxbwxdx/image/upload/v1742261257/Flag_of_Bangladesh.svg_xcifdb.png",
   },
   {
     name: "MORROCO",
-    review: "ATLAS YAHYA TRADING",
-    avatar: "/images/reviews/alice.png",
+    description: "ATLAS YAHYA TRADING",
+    avatar:
+      "https://res.cloudinary.com/dwuxbwxdx/image/upload/v1742261256/Flag_of_Morocco.svg_h7xff2.png",
   },
   {
     name: "UK",
-    review: "ATLAS YAHYA TRADING",
-    avatar: "/images/reviews/alice.png",
+    description: "ATLAS YAHYA TRADING",
+    avatar:
+      "https://res.cloudinary.com/dwuxbwxdx/image/upload/v1742261256/Flag_of_the_United_Kingdom_htergb.png",
   },
   {
     name: "GHANA",
-    review: "Sama Firma Company Limited",
-    avatar: "/images/reviews/alice.png",
+    description: "Sama Firma Company Limited",
+    avatar:
+      "https://res.cloudinary.com/dwuxbwxdx/image/upload/v1742261256/Flag_of_Ghana.svg_tjo65s.png",
   },
 ];
 
@@ -52,7 +60,9 @@ export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextReview = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex + 1) % operated_countries_list.length
+    );
   }, []);
 
   useEffect(() => {
@@ -80,17 +90,17 @@ export default function Testimonials() {
                 <div className="absolute inset-0 bg-gray-700 opacity-20 clip-design" />
                 <CardContent className="relative z-10 flex flex-col items-center text-center">
                   <Image
-                    src={reviews[currentIndex].avatar}
-                    alt={`Review by ${reviews[currentIndex].name}`}
+                    src={operated_countries_list[currentIndex].avatar}
+                    alt={`Review by ${operated_countries_list[currentIndex].name}`}
                     width={64} // 16 * 4 = 64px
                     height={64} // 16 * 4 = 64px
                     className="w-16 h-16 rounded-full mb-4 border-2 border-white shadow-md object-cover"
                   />
                   <p className="text-lg font-medium text-white italic">
-                    "{reviews[currentIndex].review}"
+                    "{operated_countries_list[currentIndex].description}"
                   </p>
                   <h4 className="mt-4 text-xl font-semibold text-white">
-                    - {reviews[currentIndex].name}
+                    - {operated_countries_list[currentIndex].name}
                   </h4>
                 </CardContent>
               </Card>

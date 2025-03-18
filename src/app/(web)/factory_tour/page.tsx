@@ -12,6 +12,43 @@ export default function FactoryTour() {
   const [isVideoModalOpen, setVideoModalOpen] = useState(false);
   const { register, handleSubmit, reset } = useForm();
 
+  const factory_images = [
+    { src: "/images/about_us/led-oven.png", alt: "LED Photoelectric Oven" },
+    {
+      src: "/images/about_us/shock-machine.png",
+      alt: "Cold and Hot Shock Testing Machine",
+    },
+    { src: "/images/about_us/smt-room.png", alt: "SMT Clean Room" },
+    {
+      src: "/images/about_us/screw-line.png",
+      alt: "Semi-Automatic Screw Machine Assembly Line",
+    },
+    {
+      src: "/images/about_us/wave-soldering.png",
+      alt: "Wave Soldering Machine",
+    },
+    {
+      src: "/images/about_us/yamaha-machine.png",
+      alt: "Yamaha High-Speed Machine",
+    },
+    {
+      src: "/images/about_us/samsung-phone.png",
+      alt: "Samsung High-Speed Phone",
+    },
+    {
+      src: "/images/about_us/glue-machine.png",
+      alt: "Fully Automatic Glue Filling Machine",
+    },
+    {
+      src: "/images/about_us/printing-machine.png",
+      alt: "Fully Automatic Printing Machine",
+    },
+    {
+      src: "/images/about_us/salt-spray.png",
+      alt: "Salt Spray Testing Machine",
+    },
+  ];
+
   const onSubmit = (data: any) => {
     console.log(data);
     reset();
@@ -33,7 +70,7 @@ export default function FactoryTour() {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source
-            src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1739431007/factory2_vpse74.mp4"
+            src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1742259649/factory_tour_hero_vg20ew.mp4"
             type="video/mp4"
           />
         </video>
@@ -59,17 +96,18 @@ export default function FactoryTour() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-4 space-x-4"
+            className="mt-4 flex flex-col sm:flex-row gap-4 items-center"
           >
             <button
               onClick={() => setVideoModalOpen(true)}
-              className="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg"
+              className="w-full sm:w-auto px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg"
             >
               🎥 Watch Virtual Tour
             </button>
+
             <a
               href="#contact"
-              className="px-6 py-2 bg-yellow-500 hover:bg-yellow-600 rounded-lg"
+              className="w-full sm:w-auto px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-medium rounded-lg text-center"
             >
               📅 Book a Visit
             </a>
@@ -173,29 +211,38 @@ export default function FactoryTour() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="container mx-auto px-6 py-12"
+        viewport={{ once: false, amount: 0.2 }}
+        className="container mx-auto px-6 py-12 max-w-screen-xl"
       >
         <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
           📸 Factory Tour Gallery
         </h2>
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={1.5}
-          breakpoints={{ 768: { slidesPerView: 3 } }}
-        >
-          {[1, 2, 3, 4, 5].map((num, index) => (
-            <SwiperSlide key={index}>
-              <motion.img
-                src={`/images/factory_tour/${num}.png`}
-                alt={`Factory ${num}`}
-                className="rounded-lg shadow-md"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+
+        <div className="w-full overflow-hidden">
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={1.5}
+            breakpoints={{
+              640: { slidesPerView: 2 },
+              768: { slidesPerView: 3 },
+              1024: { slidesPerView: 4 },
+            }}
+          >
+            {factory_images.map((image, index) => (
+              <SwiperSlide key={index}>
+                <motion.img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-56 md:h-64 lg:h-72 xl:h-80 object-cover rounded-lg shadow-md"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </motion.div>
 
       {/* Contact Section */}
