@@ -44,7 +44,7 @@ const operated_countries_list = [
   },
   {
     name: "UK",
-    description: "ATLAS YAHYA TRADING",
+    description: "THE ABRAR",
     avatar:
       "https://res.cloudinary.com/dwuxbwxdx/image/upload/v1742261256/Flag_of_the_United_Kingdom_htergb.png",
   },
