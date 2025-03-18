@@ -6,7 +6,14 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import CloudinaryVideo from "./CloudinaryVideo";
 
-export default function VideoSection({ title, text, src, bgColor, reverse }) {
+export default function VideoSection({
+  title,
+  text,
+  points,
+  src,
+  bgColor,
+  reverse,
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -26,6 +33,15 @@ export default function VideoSection({ title, text, src, bgColor, reverse }) {
       >
         <h2 className="text-2xl font-bold mb-4">{title}</h2>
         <p className="text-lg">{text}</p>
+        {points && (
+          <ul className="text-lg list-disc list-inside space-y-2">
+            {points.map((point, index) => (
+              <li key={index} className="flex items-center">
+                ✅ {point}
+              </li>
+            ))}
+          </ul>
+        )}
       </motion.div>
 
       <motion.div

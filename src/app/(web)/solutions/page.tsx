@@ -148,9 +148,9 @@ export default function SolutionsPage() {
         </h2> */}
 
         <VideoSection
-          title="🚀 Next-Gen LED Display Solutions | Lumeview Innovations"
+          title="🚀 Confress Meeting Solution"
           text="Experience cutting-edge LED technology with Lumeview Smart Business Display Shanghai Co. Ltd. From immersive curved screens to high-resolution displays, we redefine digital experiences for retail, corporate, events, and more. Watch how our innovative solutions bring visuals to life with superior clarity and dynamic impact."
-          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1739979785/solution1_xqg58o.mp4"
+          src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1742193401/lumeview/videos/solution11.mp4"
           bgColor="bg-primary-light"
           reverse={false}
         />
@@ -183,8 +183,14 @@ export default function SolutionsPage() {
           reverse={false}
         />
         <VideoSection
-          title="💡 Innovative LED Display Solutions Tailored for Your Business"
-          text="Discover how our advanced LED display solutions are designed to meet diverse business needs with unmatched quality and reliability. From precision manufacturing to cutting-edge technology, our solutions offer vibrant visuals, energy efficiency, and long-lasting performance. Whether for indoor, outdoor, or specialized applications, we provide tailored solutions that deliver maximum impact and value."
+          title="💡 Why Choose Our Smart Boards?"
+          text="Unlock a new world of interactive learning with our state-of-the-art Smart Boards—designed to
+revolutionize education in schools, universities, and corporate training centers."
+          points={[
+            "Interactive Learning: Engage students with touch-screen technology, multimedia, and interactive tools that make learning fun and effective.",
+            " Easy Integration: Seamlessly integrates with existing systems to enhance teaching methods and create a dynamic classroom environment.",
+            "Enhanced Collaboration: Foster collaboration and creativity by allowing students and teachers to work together in real time.",
+          ]}
           src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1740288055/solutionx_cjczeg.mp4"
           bgColor="bg-secondary-light"
           reverse={true}
