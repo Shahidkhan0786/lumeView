@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useRef } from "react";
-import { Button } from "@/components/ui/button";
+
 import Image from "next/image";
 
 import {
@@ -487,12 +487,7 @@ export default function Navbar() {
                   >
                     Touch Enquiry
                   </Link>
-                  <Link
-                    href="/products/smart-blackboard"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Mobile Screen
-                  </Link>
+
                   {/* <Link
                     href="/products/smart-blackboard"
                     className="block px-4 py-2 hover:bg-gray-100"

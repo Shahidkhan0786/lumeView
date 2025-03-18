@@ -1,83 +1,85 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const slides = [
-  // {
-  //   type: "video",
-  //   videoSrc:
-  //     "https://res.cloudinary.com/dwuxbwxdx/video/upload/v1738981753/front_xuagmf.mp4",
-  //   title: "Transform Your Business",
-  //   subtitle:
-  //     "with Cutting-Edge Interactive Displays. Enhance your business environment with our versatile display solutions.",
-  //   link: "/learn-more",
-  // },
-  {
-    type: "image",
-    image: "/images/hero/hero1.png",
-    title: "Breathtaking Views",
-    subtitle: "Experience the beauty of nature in ultra-high resolution",
-    link: "/led_all_in_one",
-  },
-  {
-    type: "image",
-    image: "/images/hero/hero2.jpg",
-    title: "Immersive Digital Experience",
-    subtitle: "Step into the future with interactive digital displays",
-    link: "/led_all_in_one",
-  },
-  {
-    type: "image",
-    image: "/images/hero/hero3.jpg",
-    title: "Crystal Clear LED Display",
-    subtitle: "High-definition visuals for an unparalleled experience",
-    link: "/led_all_in_one",
-  },
-  {
-    type: "image",
-    image: "/images/hero/hero4.jpg",
-    title: "Next-Gen Data Center",
-    subtitle: "Monitor and manage data like never before",
-    link: "/led_all_in_one",
-  },
-  {
-    type: "image",
-    image: "/images/hero/hero5.jpg",
-    title: "Futuristic Control Room",
-    subtitle: "Real-time monitoring and analytics at your fingertips",
-    link: "/led_all_in_one",
-  },
-  {
-    type: "image",
-    image: "/images/hero/hero6.jpg",
-    title: "Innovative Broadcasting Studio",
-    subtitle: "Revolutionizing media with advanced technology",
-    link: "/led_all_in_one",
-  },
-  {
-    type: "image",
-    image: "/images/hero/hero7.jpg",
-    title: "Executive Conference Hall",
-    subtitle: "Premium boardroom setup for high-level discussions",
-    link: "/led_all_in_one",
-  },
-  {
-    type: "image",
-    image: "/images/hero/hero8.jpg",
-    title: "Smart Business Display one-stop Solutions",
-    subtitle: "Intelligent Advertisement Machine Series",
-    link: "/led_all_in_one",
-  },
-];
-
 export default function HeroSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videoRef = useRef(null);
   const intervalRef = useRef(null);
+  const slides = useMemo(
+    () => [
+      // {
+      //   type: "video",
+      //   videoSrc:
+      //     "https://res.cloudinary.com/dwuxbwxdx/video/upload/v1738981753/front_xuagmf.mp4",
+      //   title: "Transform Your Business",
+      //   subtitle:
+      //     "with Cutting-Edge Interactive Displays. Enhance your business environment with our versatile display solutions.",
+      //   link: "/learn-more",
+      // },
+      {
+        type: "image",
+        image: "/images/hero/hero1.png",
+        title: "Breathtaking Views",
+        subtitle: "Experience the beauty of nature in ultra-high resolution",
+        link: "/led_all_in_one",
+      },
+      {
+        type: "image",
+        image: "/images/hero/hero2.jpg",
+        title: "Immersive Digital Experience",
+        subtitle: "Step into the future with interactive digital displays",
+        link: "/led_all_in_one",
+      },
+      {
+        type: "image",
+        image: "/images/hero/hero3.jpg",
+        title: "Crystal Clear LED Display",
+        subtitle: "High-definition visuals for an unparalleled experience",
+        link: "/led_all_in_one",
+      },
+      {
+        type: "image",
+        image: "/images/hero/hero4.jpg",
+        title: "Next-Gen Data Center",
+        subtitle: "Monitor and manage data like never before",
+        link: "/led_all_in_one",
+      },
+      {
+        type: "image",
+        image: "/images/hero/hero5.jpg",
+        title: "Futuristic Control Room",
+        subtitle: "Real-time monitoring and analytics at your fingertips",
+        link: "/led_all_in_one",
+      },
+      {
+        type: "image",
+        image: "/images/hero/hero6.jpg",
+        title: "Innovative Broadcasting Studio",
+        subtitle: "Revolutionizing media with advanced technology",
+        link: "/led_all_in_one",
+      },
+      {
+        type: "image",
+        image: "/images/hero/hero7.jpg",
+        title: "Executive Conference Hall",
+        subtitle: "Premium boardroom setup for high-level discussions",
+        link: "/led_all_in_one",
+      },
+      {
+        type: "image",
+        image: "/images/hero/hero8.jpg",
+        title: "Smart Business Display one-stop Solutions",
+        subtitle: "Intelligent Advertisement Machine Series",
+        link: "/led_all_in_one",
+      },
+    ],
+    []
+  );
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
