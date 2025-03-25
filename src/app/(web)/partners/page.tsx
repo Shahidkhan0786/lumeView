@@ -2,7 +2,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaGlobe,
+} from "react-icons/fa";
+
 import { toast } from "react-hot-toast";
 import Link from "next/link";
 
@@ -38,10 +44,57 @@ const locations = [
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.722536931873!2d73.04724931500505!3d33.64234598072088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df95a4c2fcee51%3A0x4b1b6b0b0b0b0b0b!2sI-8%20Markaz%20I%208%20Markaz%20I-8%2C%20Islamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2s!4v1718790000000!5m2!1sen!2s",
   },
 ];
+const distributors = [
+  {
+    country: "Pakistan",
+    name: "STARTECH BUSINESS",
+    website: "https://startechbusiness.com/",
+    contact: "Zafar iqbal",
+    phone: "92321 9540419",
+    sales: "HAMZA",
+  },
+  {
+    country: "Nigeria",
+    name: "INSPIRED GLOBAL MEDIA",
+    website: "www.inspiredglobalmedia.com",
+    contact: "ENGR. ABEL EDOKA",
+    phone: "2347038576747",
+    sales: "FREDIAND",
+  },
+  {
+    country: "Nigeria",
+    name: "vena tech limited",
+    website: "vena-tech.com",
+    contact: "Mr. Felix .O.  Oseh",
+    phone: "9044410390",
+    sales: "FREDIAND",
+  },
+  {
+    country: "Saudi Arabia",
+    name: "The Elite",
+    website: "",
+    contact: "ibrahim Taha",
+    phone: "966543274014",
+    sales: "HAMZA",
+  },
+  {
+    country: "Canada",
+    name: "10323349 CANADA INC",
+    website: "https://www.mapleinternationaloep.com",
+    contact: "Muhammad Jabbar",
+    phone: "1416-993-6862",
+    sales: "HAMZA",
+  },
+];
 
 export default function ContactUs() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState("");
+
+  const handleChange = (e) => {
+    setSelectedCountry(e.target.value);
+  };
 
   const handleScrollToContact = () => {
     const section = document.getElementById("contact-form");
@@ -49,38 +102,66 @@ export default function ContactUs() {
       section.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling effect
     }
   };
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  const filteredDistributors = distributors.filter(
+    (d) => d.country === selectedCountry
+  );
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (!response.ok) {
-        throw new Error("Submission failed");
-      }
-
-      const data = await response.json();
-      toast.success(data.message);
-      setForm({ name: "", email: "", message: "" });
-    } catch (error) {
-      toast.error("Failed to submit form. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
   return (
-    <div className="bg-white text-gray-800 mt-24">
+    <div className="bg-white text-gray-800 mt-24 pt-12">
+      <h2 className="text-3xl font-bold text-center mb-8">
+        Find a Distributor
+      </h2>
+      <div className="max-w-md mx-auto">
+        <select
+          onChange={handleChange}
+          value={selectedCountry}
+          className="w-full p-3 border rounded-lg"
+        >
+          <option value="">Select a Country</option>
+          {[...new Set(distributors.map((d) => d.country))].map(
+            (country, index) => (
+              <option key={index} value={country}>
+                {country}
+              </option>
+            )
+          )}
+        </select>
+      </div>
+
+      {selectedCountry && (
+        <div className="mt-8 max-w-4xl mx-auto">
+          {filteredDistributors.map((d, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-gray-100 p-6 shadow-lg rounded-lg mb-6"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 flex items-center">
+                <FaMapMarkerAlt className="text-blue-500 mr-2" /> {d.name}
+              </h3>
+              <p className="text-gray-600 mt-2">
+                <FaGlobe className="text-blue-500 mr-2 inline" />{" "}
+                <a
+                  href={d.website}
+                  target="_blank"
+                  className="text-blue-600 underline"
+                >
+                  {d.website}
+                </a>
+              </p>
+              <p className="text-gray-600 mt-2">
+                <FaPhoneAlt className="text-blue-500 mr-2 inline" /> {d.phone}
+              </p>
+              <p className="text-gray-600 mt-2">Contact Person: {d.contact}</p>
+              <p className="text-gray-600 mt-2">Responsible Sales: {d.sales}</p>
+            </motion.div>
+          ))}
+        </div>
+      )}
+
       {/* Locations Section */}
       <section className="bg-gray-100 py-16">
         <div className="max-w-6xl mx-auto px-6">

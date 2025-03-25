@@ -204,7 +204,7 @@ export default function HeroSection() {
 
           <section
             id="products"
-            className="min-h-screen w-full py-10 bg-gray-50 "
+            className="min-h-screen w-full pt-10 bg-gray-50 "
           >
             {/* <h2 className="text-3xl font-bold p-10">Products</h2> */}
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
@@ -415,6 +415,22 @@ export default function HeroSection() {
 
           <main className="flex flex-col items-center justify-center  text-white p-4">
             {/* <h1 className="text-3xl font-bold mb-6">Welcome to Our Platform</h1> */}
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 relative text-gray-500 dark:text-gray-200">
+              <span className="relative inline-block p-2">
+                Specifications
+                <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
+              </span>
+            </h2>
+            <div className="overflow-hidden group">
+              <Image
+                src="/images/specifications_page.jpg"
+                alt="Digital Signage Display"
+                width={1000}
+                height={1000}
+                objectFit="cover"
+                className="transform transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
             <CloudinaryVideo src="https://res.cloudinary.com/dwuxbwxdx/video/upload/v1738936841/DETAILED_SCREE_hdsctg.mp4" />
           </main>
         </div>
