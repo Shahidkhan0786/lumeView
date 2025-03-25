@@ -85,6 +85,22 @@ const distributors = [
     phone: "1416-993-6862",
     sales: "HAMZA",
   },
+  {
+    country: "Bangladesh",
+    name: "Osmo Corporation",
+    website: "www.osmocorporation.com",
+    contact: "Tariq Jamil",
+    phone: "1734780010",
+    sales: "HAMZA",
+  },
+  {
+    country: "UK",
+    name: "The ABRAR",
+    // website: "www.osmocorporation.com",
+    contact: "HASHIM",
+    phone: "447756980031",
+    sales: "HAMZA",
+  },
 ];
 
 export default function ContactUs() {
@@ -110,7 +126,7 @@ export default function ContactUs() {
   return (
     <div className="bg-white text-gray-800 mt-24 pt-12">
       <h2 className="text-3xl font-bold text-center mb-8">
-        Find a Distributor
+        Buy From Destributors
       </h2>
       <div className="max-w-md mx-auto">
         <select
@@ -142,21 +158,26 @@ export default function ContactUs() {
               <h3 className="text-xl font-semibold text-gray-900 flex items-center">
                 <FaMapMarkerAlt className="text-blue-500 mr-2" /> {d.name}
               </h3>
-              <p className="text-gray-600 mt-2">
-                <FaGlobe className="text-blue-500 mr-2 inline" />{" "}
-                <a
-                  href={d.website}
-                  target="_blank"
-                  className="text-blue-600 underline"
-                >
-                  {d.website}
-                </a>
-              </p>
+              {d.website ? (
+                <p className="text-gray-600 mt-2">
+                  <FaGlobe className="text-blue-500 mr-2 inline" />{" "}
+                  <a
+                    href={d.website}
+                    target="_blank"
+                    className="text-blue-600 underline"
+                  >
+                    {d.website}
+                  </a>
+                </p>
+              ) : (
+                ""
+              )}
+
               <p className="text-gray-600 mt-2">
                 <FaPhoneAlt className="text-blue-500 mr-2 inline" /> {d.phone}
               </p>
               <p className="text-gray-600 mt-2">Contact Person: {d.contact}</p>
-              <p className="text-gray-600 mt-2">Responsible Sales: {d.sales}</p>
+              {/* <p className="text-gray-600 mt-2">Responsible Sales: {d.sales}</p> */}
             </motion.div>
           ))}
         </div>
