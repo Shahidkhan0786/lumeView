@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Lumeview-Manufacture",
   description: "A electronic company",
   icons: {
-    icon: "/favicon.ico", // Path to your favicon in public folder
+    icon: "/public/favicon.ico", // Path to your favicon in public folder
   },
 };
 
