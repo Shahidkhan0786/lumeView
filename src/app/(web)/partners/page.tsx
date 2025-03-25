@@ -97,8 +97,16 @@ const distributors = [
     country: "UK",
     name: "The ABRAR",
     // website: "www.osmocorporation.com",
-    contact: "HASHIM",
+    contact: "Abrar Hussain",
     phone: "447756980031",
+    sales: "HAMZA",
+  },
+  {
+    country: "GHANA",
+    name: "Sama Firma Company Limited",
+    website: "www.Empomart.com",
+    contact: "Samuel Asenso",
+    phone: "055 6497941",
     sales: "HAMZA",
   },
 ];

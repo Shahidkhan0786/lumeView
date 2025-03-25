@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const products = [
   {
-    name: "INTERACTIVE PANELS",
+    name: "INTERACTIVE FLAT PANNEL",
     description: "High-end interactive flat panels for smart collaboration.",
     image: "/images/interactive-panel.png",
     link: "/all_in_one",
