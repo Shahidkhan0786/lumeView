@@ -335,38 +335,17 @@ export default function HeroSection() {
                 <span className="absolute left-1/2 bottom-0 w-12 md:w-16 h-1 bg-blue-500 rounded-full transform -translate-x-1/2"></span>
               </span>
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-gray-300 text-sm text-center">
-                <thead>
-                  <tr className="bg-gray-200">
-                    <th className="border border-gray-300 p-2">Feature</th>
-                    {models.map((model, index) => (
-                      <th key={index} className="border border-gray-300 p-2">
-                        {model.name}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.keys(models[0])
-                    .slice(1)
-                    .map((key, rowIndex) => (
-                      <tr key={rowIndex}>
-                        <td className="border border-gray-300 p-2 font-semibold">
-                          {key.replace(/([A-Z])/g, " $1").trim()}
-                        </td>
-                        {models.map((model, colIndex) => (
-                          <td
-                            key={colIndex}
-                            className="border border-gray-300 p-2"
-                          >
-                            {model[key]}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
+            <div className="w-full">
+              <div className="group flex justify-center">
+                <Image
+                  src="/images/specifications_page.jpg"
+                  alt="Digital Signage Display"
+                  width={1000}
+                  height={1000}
+                  objectFit="cover"
+                  className="transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
             </div>
           </section>
         </div>
