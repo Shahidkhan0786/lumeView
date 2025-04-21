@@ -1,0 +1,41 @@
+name: Deploy Next.js to Alibaba Cloud
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22.13.1"
+
+      - name: Install Dependencies
+        run: npm install --force
+
+      - name: Build Next.js App
+        run: npm run build
+
+      - name: Debug SSH Action
+        run: echo "Connecting to ${{secrets.ALIBABA_HOST}}"
+
+      - name: Deploy to Alibaba Cloud
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ALIBABA_HOST }}
+          username: ${{ secrets.ALIBABA_USER }}
+          password: ${{ secrets.ALIBABA_PASSWORD }}
+          script: |
+            cd /var/www/lumeView
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart next-app
