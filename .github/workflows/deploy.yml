@@ -39,3 +39,4 @@ jobs:
             npm install
             npm run build
             pm2 restart next-app
+            sudo systemctl restart apache2
