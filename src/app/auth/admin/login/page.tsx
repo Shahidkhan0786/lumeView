@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { toast } from "react-hot-toast";
 // import lumeviewLogo from "@/public/logo.png";
 
 export default function LoginPage() {
@@ -14,18 +15,8 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const result = await signIn("credentials", {
-      email: formData.get("email"),
-      password: formData.get("password"),
-      redirect: false,
-    });
-
-    if (result?.ok) {
-      router.push("/admin");
-    } else {
-      alert("Login failed. Please check your credentials.");
-    }
+    // alert("Login failed. Please check your credentials.");
+    toast.error("Login failed. Please check your credentials.");
   };
 
   return (
@@ -75,7 +66,7 @@ export default function LoginPage() {
               </div>
               <Button
                 type="submit"
-                className="w-full bg-brightBlue hover:bg-deepBlue"
+                className="w-full bg-primary text-white hover:bg-accent px-2 py-2 rounded-md transition duration-200 ease-in-out"
               >
                 Login
               </Button>
