@@ -7,6 +7,9 @@ import {
   FaMapMarkerAlt,
   FaEnvelope,
   FaGlobe,
+  FaCalendarAlt,
+  FaIdBadge,
+  FaHandshake,
 } from "react-icons/fa";
 
 import { toast } from "react-hot-toast";
@@ -54,12 +57,43 @@ const distributors = [
     sales: "HAMZA",
   },
   {
+  country: "Pakistan",
+  name: "Star Interprises",
+  address: "783 Block Y, Street No 31, DHA Phase 7, Lahore",
+  contact: "Mr. Tahir Manzoor",
+  phone: "+92 321 8402719",
+  whatsapp: "+92 336 5099416 (WhatsApp 24/7)",
+  email: "lumeviewpk@gmail.com",
+  sales: "HAMZA",
+},
+  // {
+  //   country: "Nigeria",
+  //   name: "INSPIRED GLOBAL MEDIA",
+  //   website: "www.inspiredglobalmedia.com",
+  //   contact: "ENGR. ABEL EDOKA",
+  //   phone: "2347038576747",
+  //   sales: "FREDIAND",
+  // },
+  {
     country: "Nigeria",
-    name: "INSPIRED GLOBAL MEDIA",
-    website: "www.inspiredglobalmedia.com",
-    contact: "ENGR. ABEL EDOKA",
-    phone: "2347038576747",
-    sales: "FREDIAND",
+    name: "DRAVE IDERS, ADVERT AND MARKETING",
+    registration_number: "BN: 8304178",
+    website: "UNDER CONSTRUCTION",
+    establishment_date: "Feb, 2015",
+    contacts: [
+      {
+        name: "VICTOR LIMOTH",
+        title: "MANDANÁ PARTNER",
+        phone: "08023325057",
+        email: "viktory@victorle-plus.com"
+      },
+      {
+        name: "UTM URATH",
+        title: "MANDANÁ PARTNER",
+        phone: "08027847305",
+        email: "yyurach@hotmail.com"
+      }
+    ],
   },
   {
     country: "Nigeria",
@@ -166,6 +200,8 @@ export default function ContactUs() {
               <h3 className="text-xl font-semibold text-gray-900 flex items-center">
                 <FaMapMarkerAlt className="text-blue-500 mr-2" /> {d.name}
               </h3>
+
+
               {d.website ? (
                 <p className="text-gray-600 mt-2">
                   <FaGlobe className="text-blue-500 mr-2 inline" />{" "}
@@ -181,11 +217,48 @@ export default function ContactUs() {
                 ""
               )}
 
-              <p className="text-gray-600 mt-2">
-                <FaPhoneAlt className="text-blue-500 mr-2 inline" /> {d.phone}
-              </p>
-              <p className="text-gray-600 mt-2">Contact Person: {d.contact}</p>
-              {/* <p className="text-gray-600 mt-2">Responsible Sales: {d.sales}</p> */}
+              {d.phone && (
+                <p className="text-gray-600 mt-2 flex items-center">
+                  <FaPhoneAlt className="text-blue-500 mr-2" /> {d.phone}
+                </p>
+              )}
+
+
+              {d.establishment_date && (
+                <p className="text-gray-600 mt-2 flex items-center">
+                  <FaCalendarAlt className="text-blue-500 mr-2" /> Established: {d.establishment_date}
+                </p>
+              )}
+
+              {d.registration_number && (
+                <p className="text-gray-600 mt-2 flex items-center">
+                  <FaIdBadge className="text-blue-500 mr-2" /> Reg. No.: {d.registration_number}
+                </p>
+              )}
+
+              {d.contacts && d.contacts.length > 0 ? (
+                <div className="mt-2 space-y-2">
+                  {d.contacts.map((person, index) => (
+                    <div key={index} className="text-gray-600 border-t pt-2">
+                      <p><strong>Name:</strong> {person.name}</p>
+                      <p><strong>Title:</strong> {person.title}</p>
+                      <p><strong>Phone:</strong> {person.phone}</p>
+                      <p><strong>Email:</strong> {person.email}</p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-600 mt-2">
+                  <strong>Contact Person:</strong> {d.contact}
+                </p>
+              )}
+
+
+              {d.sales && (
+                <p className="text-gray-600 mt-2 flex items-center">
+                  <FaHandshake className="text-blue-500 mr-2" /> Responsible Sales: {d.sales}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>
