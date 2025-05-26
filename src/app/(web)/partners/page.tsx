@@ -88,10 +88,10 @@ const distributors = [
         email: "vikkyjay2007@yahoo.com",
       },
       {
-        name: "UJU URATH",
+        name: "UJU URAIH",
         title: "MANAGING PARTNER",
         phone: "08027847305",
-        email: "ujuuraik@hotmail.com",
+        email: "ujuuraih@hotmail.com",
       },
     ],
   },
@@ -101,7 +101,7 @@ const distributors = [
     website: "vena-tech.com",
     contact: "Mr. Felix .O.  Oseh",
     phone: "9044410390",
-    sales: "FREDIAND",
+    sales: "FERDINAND",
   },
   {
     country: "Saudi Arabia",
