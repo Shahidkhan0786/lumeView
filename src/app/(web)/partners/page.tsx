@@ -125,7 +125,7 @@ const distributors = [
     website: "www.osmocorporation.com",
     contact: "Tariq Jamil",
     phone: "1734780010",
-    sales: "HAMZA",
+    sales: "Rawan",
   },
   {
     country: "UK",
@@ -141,7 +141,7 @@ const distributors = [
     website: "www.Empomart.com",
     contact: "Samuel Asenso",
     phone: "055 6497941",
-    sales: "HAMZA",
+    sales: "FERDINAND",
   },
 ];
 
