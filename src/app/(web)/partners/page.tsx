@@ -84,7 +84,7 @@ const distributors = [
       {
         name: "VICTOR UMOH",
         title: "MANAGING PARTNER",
-        phone: "08023325057",
+        phone: "08023325054",
         email: "vikkyjay2007@yahoo.com",
       },
       {
